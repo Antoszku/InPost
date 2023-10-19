@@ -8,12 +8,11 @@
 import UIKit
 
 class IPNavigationController: UINavigationController {
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
     }
-    
+
     private func setupNavigationBar() {
         let appearance = UINavigationBarAppearance()
         appearance.backgroundEffect = nil
@@ -22,11 +21,10 @@ class IPNavigationController: UINavigationController {
         appearance.shadowColor = .clear
         appearance.titleTextAttributes = [
             .foregroundColor: UIColor.black,
-            .font: UIFont.systemFont(ofSize: 15, weight: .bold)
+            .font: UIFont.systemFont(ofSize: 15, weight: .bold),
         ]
-        
+
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
     }
-    
 }

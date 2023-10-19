@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "\Running SwiftFormat:\n"
+export PATH=/usr/local/bin:$PATH
+swift ./hooks/SwiftFormat.swift

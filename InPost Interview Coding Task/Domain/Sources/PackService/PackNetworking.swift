@@ -8,8 +8,7 @@
 import Foundation
 
 public class PackNetworking {
-
-    public init() { }
+    public init() {}
 
     private let jsonDecoder: JSONDecoder = {
         let decoder = JSONDecoder()
@@ -23,5 +22,4 @@ public class PackNetworking {
         let result = try! jsonDecoder.decode([Pack].self, from: data)
         completion(.success(result))
     }
-
 }
