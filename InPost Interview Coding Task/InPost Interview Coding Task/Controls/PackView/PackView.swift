@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PackService
 
 class PackView: UIView {
     

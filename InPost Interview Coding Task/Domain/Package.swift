@@ -14,7 +14,7 @@ let package = Package(
     ],
     targets: [
         .target(name: .Domain, dependencies: [.Resolver, .PackService]),
-        .target(name: .PackService, dependencies: [.Resolver]),
+        .target(name: .PackService, dependencies: [.Resolver], resources: [.process("Mock")]),
     ]
 )
 

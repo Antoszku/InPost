@@ -24,12 +24,12 @@ import Foundation
  * 13. PICKUP_TIME_EXPIRED
  */
 
-struct Pack: Codable {
-    let id: String
-    let status: String
-    let sender: String
-    let expiryDate: Date?
-    let pickupDate: Date?
-    let storedDate: Date?
-    let shipmentType: String
+public struct Pack: Codable {
+    public let id: String
+    public let status: String
+    public let sender: String
+    public let expiryDate: Date?
+    public let pickupDate: Date?
+    public let storedDate: Date?
+    public let shipmentType: String
 }
