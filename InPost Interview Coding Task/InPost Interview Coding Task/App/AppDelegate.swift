@@ -1,28 +1,11 @@
-//
-//  AppDelegate.swift
-//  InPost Interview Coding Task
-//
-//  Created by Damian Piwowarski on 03/11/2022.
-//
-
-import UIKit
+import SwiftUI
 import Pack
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
-
-    func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        buildStartingView()
-        return true
-    }
-
-    private func buildStartingView() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let packListController = storyboard.instantiateViewController(withIdentifier: "PackListController") as! PackListController
-
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = IPNavigationController(rootViewController: packListController)
-        window?.makeKeyAndVisible()
+struct InPostApp: App {
+    var body: some Scene {
+        WindowGroup {
+            PackListView()
+        }
     }
 }
