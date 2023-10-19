@@ -1,0 +1,833 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0ABB2A19C1443362ECFE34A7 /* Pods_InPost_Interview_Coding_TaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D6C720825E15C8DB9CDFC0 /* Pods_InPost_Interview_Coding_TaskTests.framework */; };
+		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
+		D671D95C2913E528001FA9D5 /* PackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D95B2913E528001FA9D5 /* PackListController.swift */; };
+		D671D95F2913E528001FA9D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D671D95D2913E528001FA9D5 /* Main.storyboard */; };
+		D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D671D9602913E529001FA9D5 /* Assets.xcassets */; };
+		D671D9642913E529001FA9D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D671D9622913E529001FA9D5 /* LaunchScreen.storyboard */; };
+		D671D96F2913E529001FA9D5 /* InPostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D96E2913E529001FA9D5 /* InPostTests.swift */; };
+		D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D98B2913EDA4001FA9D5 /* IPNavigationController.swift */; };
+		D671D98F2913F2A1001FA9D5 /* Pack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D98E2913F2A1001FA9D5 /* Pack.swift */; };
+		D671D9912913F79B001FA9D5 /* PackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9902913F79B001FA9D5 /* PackView.swift */; };
+		D671D9942913F82E001FA9D5 /* PackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D671D9932913F82E001FA9D5 /* PackView.xib */; };
+		D671D9972915111C001FA9D5 /* PackNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9962915111C001FA9D5 /* PackNetworking.swift */; };
+		D671D99E2915139F001FA9D5 /* packs.json in Resources */ = {isa = PBXBuildFile; fileRef = D671D99D2915139F001FA9D5 /* packs.json */; };
+		E9D6834053AC34681B44D9F7 /* Pods_InPost_Interview_Coding_Task.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D61EABD2778CE163139EDFE /* Pods_InPost_Interview_Coding_Task.framework */; };
+		F06EF28DEDF5FA9A19B77F9F /* Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871FC296EE090F4634A2C236 /* Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D671D96B2913E529001FA9D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D671D94C2913E528001FA9D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D671D9532913E528001FA9D5;
+			remoteInfo = "InPost Interview Coding Task";
+		};
+		D671D9752913E529001FA9D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D671D94C2913E528001FA9D5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D671D9532913E528001FA9D5;
+			remoteInfo = "InPost Interview Coding Task";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		58AE36A9CE2AB8D6A8D303B3 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5E926BF62306256BFA253197 /* Pods-InPost Interview Coding TaskTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding TaskTests.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding TaskTests/Pods-InPost Interview Coding TaskTests.release.xcconfig"; sourceTree = "<group>"; };
+		83D85C87E2E58F658C011C49 /* Pods-InPost Interview Coding Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task/Pods-InPost Interview Coding Task.release.xcconfig"; sourceTree = "<group>"; };
+		86F3EED5272EDA4036556337 /* Pods-InPost Interview Coding Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task.debug.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task/Pods-InPost Interview Coding Task.debug.xcconfig"; sourceTree = "<group>"; };
+		871FC296EE090F4634A2C236 /* Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		96F920E0E0807B41F317A8DF /* Pods-InPost Interview Coding TaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding TaskTests.debug.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding TaskTests/Pods-InPost Interview Coding TaskTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9D61EABD2778CE163139EDFE /* Pods_InPost_Interview_Coding_Task.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPost_Interview_Coding_Task.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D671D9542913E528001FA9D5 /* InPost Interview Coding Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InPost Interview Coding Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D671D9572913E528001FA9D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D671D95B2913E528001FA9D5 /* PackListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackListController.swift; sourceTree = "<group>"; };
+		D671D95E2913E528001FA9D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D671D9602913E529001FA9D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D671D9632913E529001FA9D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D671D9652913E529001FA9D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D671D96A2913E529001FA9D5 /* InPost Interview Coding TaskTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InPost Interview Coding TaskTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D671D96E2913E529001FA9D5 /* InPostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPostTests.swift; sourceTree = "<group>"; };
+		D671D9742913E529001FA9D5 /* InPost Interview Coding TaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "InPost Interview Coding TaskUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D671D98B2913EDA4001FA9D5 /* IPNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPNavigationController.swift; sourceTree = "<group>"; };
+		D671D98E2913F2A1001FA9D5 /* Pack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pack.swift; sourceTree = "<group>"; };
+		D671D9902913F79B001FA9D5 /* PackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackView.swift; sourceTree = "<group>"; };
+		D671D9932913F82E001FA9D5 /* PackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackView.xib; sourceTree = "<group>"; };
+		D671D9962915111C001FA9D5 /* PackNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackNetworking.swift; sourceTree = "<group>"; };
+		D671D99D2915139F001FA9D5 /* packs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = packs.json; sourceTree = "<group>"; };
+		E9D6C720825E15C8DB9CDFC0 /* Pods_InPost_Interview_Coding_TaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPost_Interview_Coding_TaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0ADA89C9F6B8ABEECD7623 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.release.xcconfig"; path = "Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D671D9512913E528001FA9D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9D6834053AC34681B44D9F7 /* Pods_InPost_Interview_Coding_Task.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D671D9672913E529001FA9D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ABB2A19C1443362ECFE34A7 /* Pods_InPost_Interview_Coding_TaskTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D671D9712913E529001FA9D5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F06EF28DEDF5FA9A19B77F9F /* Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		913D9F73B32F33C130C9E20B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D61EABD2778CE163139EDFE /* Pods_InPost_Interview_Coding_Task.framework */,
+				871FC296EE090F4634A2C236 /* Pods_InPost_Interview_Coding_Task_InPost_Interview_Coding_TaskUITests.framework */,
+				E9D6C720825E15C8DB9CDFC0 /* Pods_InPost_Interview_Coding_TaskTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A71A50FC3ACE229B9D6CDC43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86F3EED5272EDA4036556337 /* Pods-InPost Interview Coding Task.debug.xcconfig */,
+				83D85C87E2E58F658C011C49 /* Pods-InPost Interview Coding Task.release.xcconfig */,
+				58AE36A9CE2AB8D6A8D303B3 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig */,
+				FE0ADA89C9F6B8ABEECD7623 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.release.xcconfig */,
+				96F920E0E0807B41F317A8DF /* Pods-InPost Interview Coding TaskTests.debug.xcconfig */,
+				5E926BF62306256BFA253197 /* Pods-InPost Interview Coding TaskTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D671D94B2913E528001FA9D5 = {
+			isa = PBXGroup;
+			children = (
+				D671D9562913E528001FA9D5 /* InPost Interview Coding Task */,
+				D671D96D2913E529001FA9D5 /* InPost Interview Coding TaskTests */,
+				D671D9552913E528001FA9D5 /* Products */,
+				A71A50FC3ACE229B9D6CDC43 /* Pods */,
+				913D9F73B32F33C130C9E20B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D671D9552913E528001FA9D5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D671D9542913E528001FA9D5 /* InPost Interview Coding Task.app */,
+				D671D96A2913E529001FA9D5 /* InPost Interview Coding TaskTests.xctest */,
+				D671D9742913E529001FA9D5 /* InPost Interview Coding TaskUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D671D9562913E528001FA9D5 /* InPost Interview Coding Task */ = {
+			isa = PBXGroup;
+			children = (
+				D671D9872913E649001FA9D5 /* App */,
+				D671D98A2913ED95001FA9D5 /* Controls */,
+				D671D98D2913F297001FA9D5 /* Model */,
+				D671D9952915110C001FA9D5 /* Networking */,
+				D671D9892913E685001FA9D5 /* Screen */,
+				D671D9652913E529001FA9D5 /* Info.plist */,
+			);
+			path = "InPost Interview Coding Task";
+			sourceTree = "<group>";
+		};
+		D671D96D2913E529001FA9D5 /* InPost Interview Coding TaskTests */ = {
+			isa = PBXGroup;
+			children = (
+				D671D96E2913E529001FA9D5 /* InPostTests.swift */,
+			);
+			path = "InPost Interview Coding TaskTests";
+			sourceTree = "<group>";
+		};
+		D671D9872913E649001FA9D5 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D671D9882913E677001FA9D5 /* Assets */,
+				D671D9572913E528001FA9D5 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D671D9882913E677001FA9D5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D671D9602913E529001FA9D5 /* Assets.xcassets */,
+				D671D95D2913E528001FA9D5 /* Main.storyboard */,
+				D671D9622913E529001FA9D5 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		D671D9892913E685001FA9D5 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				D671D95B2913E528001FA9D5 /* PackListController.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		D671D98A2913ED95001FA9D5 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				D671D9922913F81D001FA9D5 /* PackView */,
+				D671D98B2913EDA4001FA9D5 /* IPNavigationController.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		D671D98D2913F297001FA9D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D671D98E2913F2A1001FA9D5 /* Pack.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D671D9922913F81D001FA9D5 /* PackView */ = {
+			isa = PBXGroup;
+			children = (
+				D671D9902913F79B001FA9D5 /* PackView.swift */,
+				D671D9932913F82E001FA9D5 /* PackView.xib */,
+			);
+			path = PackView;
+			sourceTree = "<group>";
+		};
+		D671D9952915110C001FA9D5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D671D99929151360001FA9D5 /* Mock */,
+				D671D9962915111C001FA9D5 /* PackNetworking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D671D99929151360001FA9D5 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				D671D99D2915139F001FA9D5 /* packs.json */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D671D9532913E528001FA9D5 /* InPost Interview Coding Task */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D671D97E2913E529001FA9D5 /* Build configuration list for PBXNativeTarget "InPost Interview Coding Task" */;
+			buildPhases = (
+				FC954554E1E3B07743627ED0 /* [CP] Check Pods Manifest.lock */,
+				D671D9502913E528001FA9D5 /* Sources */,
+				D671D9512913E528001FA9D5 /* Frameworks */,
+				D671D9522913E528001FA9D5 /* Resources */,
+				38E58F8B2CE720D262223E4E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "InPost Interview Coding Task";
+			productName = "InPost Interview Coding Task";
+			productReference = D671D9542913E528001FA9D5 /* InPost Interview Coding Task.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D671D9692913E529001FA9D5 /* InPost Interview Coding TaskTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D671D9812913E529001FA9D5 /* Build configuration list for PBXNativeTarget "InPost Interview Coding TaskTests" */;
+			buildPhases = (
+				E24844EC088020A39DB1E76C /* [CP] Check Pods Manifest.lock */,
+				D671D9662913E529001FA9D5 /* Sources */,
+				D671D9672913E529001FA9D5 /* Frameworks */,
+				D671D9682913E529001FA9D5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D671D96C2913E529001FA9D5 /* PBXTargetDependency */,
+			);
+			name = "InPost Interview Coding TaskTests";
+			productName = "InPost Interview Coding TaskTests";
+			productReference = D671D96A2913E529001FA9D5 /* InPost Interview Coding TaskTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D671D9732913E529001FA9D5 /* InPost Interview Coding TaskUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D671D9842913E529001FA9D5 /* Build configuration list for PBXNativeTarget "InPost Interview Coding TaskUITests" */;
+			buildPhases = (
+				AA344891F738F1810698C3DF /* [CP] Check Pods Manifest.lock */,
+				D671D9702913E529001FA9D5 /* Sources */,
+				D671D9712913E529001FA9D5 /* Frameworks */,
+				D671D9722913E529001FA9D5 /* Resources */,
+				370D61ED11110C5DFA729D6B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D671D9762913E529001FA9D5 /* PBXTargetDependency */,
+			);
+			name = "InPost Interview Coding TaskUITests";
+			productName = "InPost Interview Coding TaskUITests";
+			productReference = D671D9742913E529001FA9D5 /* InPost Interview Coding TaskUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D671D94C2913E528001FA9D5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					D671D9532913E528001FA9D5 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					D671D9692913E529001FA9D5 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = D671D9532913E528001FA9D5;
+					};
+					D671D9732913E529001FA9D5 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = D671D9532913E528001FA9D5;
+					};
+				};
+			};
+			buildConfigurationList = D671D94F2913E528001FA9D5 /* Build configuration list for PBXProject "InPost Interview Coding Task" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D671D94B2913E528001FA9D5;
+			productRefGroup = D671D9552913E528001FA9D5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D671D9532913E528001FA9D5 /* InPost Interview Coding Task */,
+				D671D9692913E529001FA9D5 /* InPost Interview Coding TaskTests */,
+				D671D9732913E529001FA9D5 /* InPost Interview Coding TaskUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D671D9522913E528001FA9D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D671D9642913E529001FA9D5 /* LaunchScreen.storyboard in Resources */,
+				D671D99E2915139F001FA9D5 /* packs.json in Resources */,
+				D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */,
+				D671D95F2913E528001FA9D5 /* Main.storyboard in Resources */,
+				D671D9942913F82E001FA9D5 /* PackView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D671D9682913E529001FA9D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D671D9722913E529001FA9D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		370D61ED11110C5DFA729D6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38E58F8B2CE720D262223E4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InPost Interview Coding Task/Pods-InPost Interview Coding Task-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InPost Interview Coding Task/Pods-InPost Interview Coding Task-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InPost Interview Coding Task/Pods-InPost Interview Coding Task-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA344891F738F1810698C3DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E24844EC088020A39DB1E76C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InPost Interview Coding TaskTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC954554E1E3B07743627ED0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InPost Interview Coding Task-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D671D9502913E528001FA9D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D671D9972915111C001FA9D5 /* PackNetworking.swift in Sources */,
+				D671D98F2913F2A1001FA9D5 /* Pack.swift in Sources */,
+				D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */,
+				D671D95C2913E528001FA9D5 /* PackListController.swift in Sources */,
+				D671D9912913F79B001FA9D5 /* PackView.swift in Sources */,
+				D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D671D9662913E529001FA9D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D671D96F2913E529001FA9D5 /* InPostTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D671D9702913E529001FA9D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D671D96C2913E529001FA9D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D671D9532913E528001FA9D5 /* InPost Interview Coding Task */;
+			targetProxy = D671D96B2913E529001FA9D5 /* PBXContainerItemProxy */;
+		};
+		D671D9762913E529001FA9D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D671D9532913E528001FA9D5 /* InPost Interview Coding Task */;
+			targetProxy = D671D9752913E529001FA9D5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D671D95D2913E528001FA9D5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D671D95E2913E528001FA9D5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D671D9622913E529001FA9D5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D671D9632913E529001FA9D5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D671D97C2913E529001FA9D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D671D97D2913E529001FA9D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D671D97F2913E529001FA9D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86F3EED5272EDA4036556337 /* Pods-InPost Interview Coding Task.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "InPost Interview Coding Task/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "InPost Recruitment Task";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "inpost.pl.InPost-Interview-Coding-Task";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D671D9802913E529001FA9D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83D85C87E2E58F658C011C49 /* Pods-InPost Interview Coding Task.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "InPost Interview Coding Task/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "InPost Recruitment Task";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "inpost.pl.InPost-Interview-Coding-Task";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		D671D9822913E529001FA9D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96F920E0E0807B41F317A8DF /* Pods-InPost Interview Coding TaskTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "inpost.pl.InPost-Interview-Coding-TaskTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InPost Interview Coding Task.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InPost Interview Coding Task";
+			};
+			name = Debug;
+		};
+		D671D9832913E529001FA9D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E926BF62306256BFA253197 /* Pods-InPost Interview Coding TaskTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "inpost.pl.InPost-Interview-Coding-TaskTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InPost Interview Coding Task.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InPost Interview Coding Task";
+			};
+			name = Release;
+		};
+		D671D9852913E529001FA9D5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58AE36A9CE2AB8D6A8D303B3 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "inpost.pl.InPost-Interview-Coding-TaskUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "InPost Interview Coding Task";
+			};
+			name = Debug;
+		};
+		D671D9862913E529001FA9D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE0ADA89C9F6B8ABEECD7623 /* Pods-InPost Interview Coding Task-InPost Interview Coding TaskUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "inpost.pl.InPost-Interview-Coding-TaskUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "InPost Interview Coding Task";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D671D94F2913E528001FA9D5 /* Build configuration list for PBXProject "InPost Interview Coding Task" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D671D97C2913E529001FA9D5 /* Debug */,
+				D671D97D2913E529001FA9D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D671D97E2913E529001FA9D5 /* Build configuration list for PBXNativeTarget "InPost Interview Coding Task" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D671D97F2913E529001FA9D5 /* Debug */,
+				D671D9802913E529001FA9D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D671D9812913E529001FA9D5 /* Build configuration list for PBXNativeTarget "InPost Interview Coding TaskTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D671D9822913E529001FA9D5 /* Debug */,
+				D671D9832913E529001FA9D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D671D9842913E529001FA9D5 /* Build configuration list for PBXNativeTarget "InPost Interview Coding TaskUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D671D9852913E529001FA9D5 /* Debug */,
+				D671D9862913E529001FA9D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D671D94C2913E528001FA9D5 /* Project object */;
+}

@@ -1,0 +1,53 @@
+[
+    {
+        "id": "16730345345597442248333",
+        "status": "READY_TO_PICKUP",
+        "sender": "Test sender",
+        "expiryDate": "2022-11-29T04:56:07Z",
+        "storedDate": "2022-11-29T04:56:07Z",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "26730345345597442248333",
+        "status": "CONFIRMED",
+        "sender": "InPost",
+        "expiryDate": "2022-11-29T04:56:07Z",
+        "storedDate": "2022-11-29T04:56:07Z",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "96730345345597442248333",
+        "status": "CONFIRMED",
+        "sender": "Lorem Ipsum",
+        "pickUpDate": "2022-11-05T04:56:07Z",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "46730345345597442248333",
+        "status": "OUT_FOR_DELIVERY",
+        "sender": "Pan Tadeusz",
+        "expiryDate": "2022-12-05T04:56:07Z",
+        "storedDate": "2022-11-25T04:56:07Z",
+        "shipmentType": "COURIER"
+    },
+    {
+        "id": "56730345345597442248333",
+        "status": "OUT_FOR_DELIVERY",
+        "sender": "Adam",
+        "expiryDate": "2022-12-05T04:56:07Z",
+        "storedDate": "2022-11-25T04:56:07Z",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "66730345345597442248333",
+        "status": "NOT_READY",
+        "sender": "Eve",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "76730345345597442248333",
+        "status": "BROKEN_STATUS",
+        "sender": "Bad server response",
+        "shipmentType": "COURIER"
+    }
+]
