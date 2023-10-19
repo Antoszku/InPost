@@ -34,6 +34,9 @@
 		D671D9932913F82E001FA9D5 /* PackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackView.xib; sourceTree = "<group>"; };
 		D671D9962915111C001FA9D5 /* PackNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackNetworking.swift; sourceTree = "<group>"; };
 		D671D99D2915139F001FA9D5 /* packs.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = packs.json; sourceTree = "<group>"; };
+		DB2BBA6D2AE1AD6C003E43AE /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
+		DB2BBA6E2AE1AE3A003E43AE /* DI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DI; sourceTree = "<group>"; };
+		DB2BBA6F2AE1AF1F003E43AE /* App */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = App; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +53,9 @@
 		D671D94B2913E528001FA9D5 = {
 			isa = PBXGroup;
 			children = (
+				DB2BBA6F2AE1AF1F003E43AE /* App */,
+				DB2BBA6E2AE1AE3A003E43AE /* DI */,
+				DB2BBA6D2AE1AD6C003E43AE /* Domain */,
 				D671D9562913E528001FA9D5 /* InPost Interview Coding Task */,
 				D671D9552913E528001FA9D5 /* Products */,
 			);
