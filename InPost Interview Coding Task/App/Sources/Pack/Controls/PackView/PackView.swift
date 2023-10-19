@@ -42,7 +42,7 @@ class PackView: UIView {
     }
 
     private func loadView() {
-        Bundle.main.loadNibNamed("PackView", owner: self, options: nil)
+        Bundle.module.loadNibNamed("PackView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds
         contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]

@@ -8,27 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
-		D671D95C2913E528001FA9D5 /* PackListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D95B2913E528001FA9D5 /* PackListController.swift */; };
 		D671D95F2913E528001FA9D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D671D95D2913E528001FA9D5 /* Main.storyboard */; };
 		D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D671D9602913E529001FA9D5 /* Assets.xcassets */; };
 		D671D9642913E529001FA9D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D671D9622913E529001FA9D5 /* LaunchScreen.storyboard */; };
-		D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D98B2913EDA4001FA9D5 /* IPNavigationController.swift */; };
-		D671D9912913F79B001FA9D5 /* PackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9902913F79B001FA9D5 /* PackView.swift */; };
-		D671D9942913F82E001FA9D5 /* PackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D671D9932913F82E001FA9D5 /* PackView.xib */; };
-		DB2BBA722AE1B2A5003E43AE /* PackService in Frameworks */ = {isa = PBXBuildFile; productRef = DB2BBA712AE1B2A5003E43AE /* PackService */; };
+		DB2D03F62AE1B4E4007FE392 /* Pack in Frameworks */ = {isa = PBXBuildFile; productRef = DB2D03F52AE1B4E4007FE392 /* Pack */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D671D9542913E528001FA9D5 /* InPost Interview Coding Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InPost Interview Coding Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D671D9572913E528001FA9D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D671D95B2913E528001FA9D5 /* PackListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackListController.swift; sourceTree = "<group>"; };
 		D671D95E2913E528001FA9D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D671D9602913E529001FA9D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D671D9632913E529001FA9D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D671D9652913E529001FA9D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D671D98B2913EDA4001FA9D5 /* IPNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPNavigationController.swift; sourceTree = "<group>"; };
-		D671D9902913F79B001FA9D5 /* PackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackView.swift; sourceTree = "<group>"; };
-		D671D9932913F82E001FA9D5 /* PackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackView.xib; sourceTree = "<group>"; };
 		DB2BBA6D2AE1AD6C003E43AE /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		DB2BBA6E2AE1AE3A003E43AE /* DI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DI; sourceTree = "<group>"; };
 		DB2BBA6F2AE1AF1F003E43AE /* App */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = App; sourceTree = "<group>"; };
@@ -39,7 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB2BBA722AE1B2A5003E43AE /* PackService in Frameworks */,
+				DB2D03F62AE1B4E4007FE392 /* Pack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,8 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				D671D9872913E649001FA9D5 /* App */,
-				D671D98A2913ED95001FA9D5 /* Controls */,
-				D671D9892913E685001FA9D5 /* Screen */,
 				D671D9652913E529001FA9D5 /* Info.plist */,
 			);
 			path = "InPost Interview Coding Task";
@@ -94,32 +84,6 @@
 				D671D9622913E529001FA9D5 /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		D671D9892913E685001FA9D5 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
-				D671D95B2913E528001FA9D5 /* PackListController.swift */,
-			);
-			path = Screen;
-			sourceTree = "<group>";
-		};
-		D671D98A2913ED95001FA9D5 /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-				D671D9922913F81D001FA9D5 /* PackView */,
-				D671D98B2913EDA4001FA9D5 /* IPNavigationController.swift */,
-			);
-			path = Controls;
-			sourceTree = "<group>";
-		};
-		D671D9922913F81D001FA9D5 /* PackView */ = {
-			isa = PBXGroup;
-			children = (
-				D671D9902913F79B001FA9D5 /* PackView.swift */,
-				D671D9932913F82E001FA9D5 /* PackView.xib */,
-			);
-			path = PackView;
 			sourceTree = "<group>";
 		};
 		DB2BBA702AE1B2A5003E43AE /* Frameworks */ = {
@@ -146,7 +110,7 @@
 			);
 			name = "InPost Interview Coding Task";
 			packageProductDependencies = (
-				DB2BBA712AE1B2A5003E43AE /* PackService */,
+				DB2D03F52AE1B4E4007FE392 /* Pack */,
 			);
 			productName = "InPost Interview Coding Task";
 			productReference = D671D9542913E528001FA9D5 /* InPost Interview Coding Task.app */;
@@ -193,7 +157,6 @@
 				D671D9642913E529001FA9D5 /* LaunchScreen.storyboard in Resources */,
 				D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */,
 				D671D95F2913E528001FA9D5 /* Main.storyboard in Resources */,
-				D671D9942913F82E001FA9D5 /* PackView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,9 +167,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D671D98C2913EDA4001FA9D5 /* IPNavigationController.swift in Sources */,
-				D671D95C2913E528001FA9D5 /* PackListController.swift in Sources */,
-				D671D9912913F79B001FA9D5 /* PackView.swift in Sources */,
 				D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,9 +395,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		DB2BBA712AE1B2A5003E43AE /* PackService */ = {
+		DB2D03F52AE1B4E4007FE392 /* Pack */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = PackService;
+			productName = Pack;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

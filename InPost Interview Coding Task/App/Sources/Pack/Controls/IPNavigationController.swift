@@ -7,8 +7,8 @@
 
 import UIKit
 
-class IPNavigationController: UINavigationController {
-    override func viewDidLoad() {
+public class IPNavigationController: UINavigationController {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
     }

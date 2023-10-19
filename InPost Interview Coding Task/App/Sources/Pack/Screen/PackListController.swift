@@ -8,12 +8,12 @@
 import PackService
 import UIKit
 
-class PackListController: UIViewController {
+public class PackListController: UIViewController {
     @IBOutlet private var stackView: UIStackView!
 
     private let packNetworking = PackNetworking()
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Lista przesyłek"
 
