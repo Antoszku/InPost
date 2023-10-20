@@ -10,11 +10,11 @@ let package = Package(
         .library(target: .PackService),
     ],
     dependencies: [
-        .package(.DI),
+        .package(.InPostKit),
     ],
     targets: [
-        .target(name: .Domain, dependencies: [.Resolver, .PackService]),
-        .target(name: .PackService, dependencies: [.Resolver], resources: [.process("Mock")]),
+        .target(name: .Domain, dependencies: [.DI, .PackService]),
+        .target(name: .PackService, dependencies: [.DI, .DomainKit], resources: [.process("Mock")]),
     ]
 )
 
@@ -27,8 +27,9 @@ enum Dependencies: String {
     // Domain
     case PackService
 
-    // DI
-    case Resolver
+    // InPostKit
+    case DomainKit
+    case DI
 
     func dependency() -> Target.Dependency {
         switch self {
@@ -36,14 +37,14 @@ enum Dependencies: String {
         case .PackService:
             return Target.Dependency(self)
         // DI
-        case .Resolver:
-            return Target.Dependency(self, package: .DI)
+        case .DomainKit, .DI:
+            return Target.Dependency(self, package: .InPostKit)
         }
     }
 }
 
 enum Packages: String {
-    case DI
+    case InPostKit
 }
 
 extension Target {
@@ -82,7 +83,7 @@ extension Product {
     }
 
     static func library(target: Targets, targets: [Targets]) -> PackageDescription.Product {
-        library(name: target.rawValue, targets: targets.map { $0.rawValue })
+        library(name: target.rawValue, targets: targets.map(\.rawValue))
     }
 }
 

@@ -16,13 +16,14 @@ public struct PackListView: View {
                         ForEach(packs) { pack in
                             PackCell(presentable: pack)
                         }
-                    }.background(.red)
+                    }
                 }
             }
-        }.onAppear {
-            Task {
-                viewModel.onAppear()
+        }.background(Color(uiColor: UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1))) // TODO: Change
+            .onAppear {
+                Task {
+                    viewModel.onAppear()
+                }
             }
-        }
     }
 }

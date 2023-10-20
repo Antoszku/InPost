@@ -11,5 +11,7 @@ struct PackListAssets {
 
     struct Images {
         static let arrow = Image("arrow", bundle: .module)
+        static let parcelLocker = Image("parcelLocker", bundle: .module)
+        static let courier = Image("courier", bundle: .module)
     }
 }

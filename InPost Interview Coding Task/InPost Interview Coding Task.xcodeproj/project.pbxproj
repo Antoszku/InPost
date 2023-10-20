@@ -18,7 +18,6 @@
 		D671D9572913E528001FA9D5 /* InPostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPostApp.swift; sourceTree = "<group>"; };
 		D671D9602913E529001FA9D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB2BBA6D2AE1AD6C003E43AE /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
-		DB2BBA6E2AE1AE3A003E43AE /* DI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DI; sourceTree = "<group>"; };
 		DB2BBA6F2AE1AF1F003E43AE /* App */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = App; sourceTree = "<group>"; };
 		DBA2B22D2AE1DA320052E212 /* InPostKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = InPostKit; sourceTree = "<group>"; };
 		DBC16A932AE2B2D600ED54F6 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -41,7 +40,6 @@
 			children = (
 				DBC16A932AE2B2D600ED54F6 /* Localizable.xcstrings */,
 				DB2BBA6F2AE1AF1F003E43AE /* App */,
-				DB2BBA6E2AE1AE3A003E43AE /* DI */,
 				DB2BBA6D2AE1AD6C003E43AE /* Domain */,
 				DBA2B22D2AE1DA320052E212 /* InPostKit */,
 				DB2BBA702AE1B2A5003E43AE /* Frameworks */,

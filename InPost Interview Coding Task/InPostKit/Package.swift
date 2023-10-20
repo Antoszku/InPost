@@ -7,24 +7,31 @@ let package = Package(
     platforms: [.iOS(.v16)],
     products: [
         .library(target: .UI),
+        .library(target: .DomainKit),
+        .library(target: .DI),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/Swinject/SwinjectAutoregistration.git", from: "2.8.3"),
+    ],
     targets: [
         .target(name: .UI, resources: [.process("Resources")]),
+        .target(name: .DomainKit),
+        .target(name: .DI, dependencies: [.SwinjectAutoregistration]),
     ]
 )
 
 enum Targets: String {
     case UI
+    case DomainKit
+    case DI
 }
 
 enum Dependencies: String {
-    case Foo
+    case SwinjectAutoregistration
 
     func dependency() -> Target.Dependency {
         switch self {
-        // Domain
-        case .Foo:
+        case .SwinjectAutoregistration:
             return Target.Dependency(self)
         }
     }
@@ -70,7 +77,7 @@ extension Product {
     }
 
     static func library(target: Targets, targets: [Targets]) -> PackageDescription.Product {
-        library(name: target.rawValue, targets: targets.map { $0.rawValue })
+        library(name: target.rawValue, targets: targets.map(\.rawValue))
     }
 }
 

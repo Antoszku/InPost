@@ -7,7 +7,7 @@ public struct Resolver {
     public init() {}
 
     public func resolve<T>(_: T.Type) -> T {
-        return container.resolve(T.self)!
+        container.resolve(T.self)!
     }
 
     public func register<T>(_ type: T.Type, initializer: @escaping (() -> T)) {
