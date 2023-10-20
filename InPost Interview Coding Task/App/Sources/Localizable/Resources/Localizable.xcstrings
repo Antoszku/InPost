@@ -1,0 +1,204 @@
+{
+  "sourceLanguage" : "pl",
+  "strings" : {
+    "more" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "więcej"
+          }
+        }
+      }
+    },
+    "packageNumber" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NR PRZESYŁKI"
+          }
+        }
+      }
+    },
+    "packStatusAdoptedAtSortingCenter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przyjęta w sortowni"
+          }
+        }
+      }
+    },
+    "packStatusAdoptedAtSourceBranch" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przyjęta w Oddziale"
+          }
+        }
+      }
+    },
+    "packStatusAvizo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozostawione Awizo"
+          }
+        }
+      }
+    },
+    "packStatusConfirmed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paczka przyjęta od Nadawcy"
+          }
+        }
+      }
+    },
+    "packStatusCreated" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przesyłka utworzona"
+          }
+        }
+      }
+    },
+    "packStatusDelivered" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paczka odebrana"
+          }
+        }
+      }
+    },
+    "packStatusNotReady" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "W trakcie przygotowania"
+          }
+        }
+      }
+    },
+    "packStatusOther" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inne"
+          }
+        }
+      }
+    },
+    "packStatusOutForDelivery" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wydana do doręczenia"
+          }
+        }
+      }
+    },
+    "packStatusPickupTimeExpired" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upłynął termin odbioru"
+          }
+        }
+      }
+    },
+    "packStatusReadyToPickup" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gotowa do odbioru"
+          }
+        }
+      }
+    },
+    "packStatusReturnedToSender" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zwrot do Nadawcy"
+          }
+        }
+      }
+    },
+    "packStatusSentFromSortingCenter" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wysłana z sortowni"
+          }
+        }
+      }
+    },
+    "packStatusSentFromSourceBranch" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wysłana z Oddziału"
+          }
+        }
+      }
+    },
+    "sender" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NADAWCA"
+          }
+        }
+      }
+    },
+    "status" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "STATUS"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

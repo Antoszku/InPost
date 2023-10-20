@@ -11,6 +11,7 @@ import Foundation
 public struct PackDTO: Decodable {
     public enum Status: String, Codable {
         case created = "CREATED"
+        case notReady = "NOT_READY"
         case confirmed = "CONFIRMED"
         case adoptedAtSourceBranch = "ADOPTED_AT_SOURCE_BRANCH"
         case sentFromSourceBranch = "SENT_FROM_SOURCE_BRANCH"

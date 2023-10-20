@@ -10,7 +10,6 @@
 		D671D9582913E528001FA9D5 /* InPostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* InPostApp.swift */; };
 		D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D671D9602913E529001FA9D5 /* Assets.xcassets */; };
 		DB2D03F62AE1B4E4007FE392 /* Pack in Frameworks */ = {isa = PBXBuildFile; productRef = DB2D03F52AE1B4E4007FE392 /* Pack */; };
-		DBC16A942AE2B2D600ED54F6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DBC16A932AE2B2D600ED54F6 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +19,7 @@
 		DB2BBA6D2AE1AD6C003E43AE /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		DB2BBA6F2AE1AF1F003E43AE /* App */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = App; sourceTree = "<group>"; };
 		DBA2B22D2AE1DA320052E212 /* InPostKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = InPostKit; sourceTree = "<group>"; };
-		DBC16A932AE2B2D600ED54F6 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		DBD2AAC92AE317A2004502CD /* InPostsTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = InPostsTests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,7 +37,6 @@
 		D671D94B2913E528001FA9D5 = {
 			isa = PBXGroup;
 			children = (
-				DBC16A932AE2B2D600ED54F6 /* Localizable.xcstrings */,
 				DB2BBA6F2AE1AF1F003E43AE /* App */,
 				DB2BBA6D2AE1AD6C003E43AE /* Domain */,
 				DBA2B22D2AE1DA320052E212 /* InPostKit */,
@@ -67,6 +65,7 @@
 		D671D9872913E649001FA9D5 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				DBD2AAC92AE317A2004502CD /* InPostsTests.xctestplan */,
 				D671D9882913E677001FA9D5 /* Assets */,
 				D671D9572913E528001FA9D5 /* InPostApp.swift */,
 			);
@@ -118,7 +117,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					D671D9532913E528001FA9D5 = {
@@ -149,7 +148,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBC16A942AE2B2D600ED54F6 /* Localizable.xcstrings in Resources */,
 				D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,7 +216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -272,7 +270,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

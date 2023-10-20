@@ -2,6 +2,6 @@ import Foundation
 
 public extension String {
     var localized: Self {
-        return String(localized: LocalizedStringResource(stringLiteral: self))
+        String(localized: String.LocalizationValue(self), bundle: .module)
     }
 }

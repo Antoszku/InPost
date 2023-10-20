@@ -25,22 +25,23 @@ extension PackPresentable {
         }
 
         switch dto.status {
-        case .unsupported: status = ""
+        case .unsupported: status = PackListAssets.Texts.packStatusUnsupported
         case let .supported(packStatus):
             switch packStatus {
-            case .created: status = ""
-            case .confirmed: status = ""
-            case .adoptedAtSourceBranch: status = ""
-            case .sentFromSourceBranch: status = ""
-            case .adoptedAtSortingCenter: status = ""
-            case .sentFromSortingCenter: status = ""
-            case .other: status = ""
-            case .delivered: status = ""
-            case .returnedToSender: status = ""
-            case .avizo: status = ""
-            case .outForDelivery: status = ""
-            case .readyToPickup: status = ""
-            case .pickupTimeExpired: status = ""
+            case .created: status = PackListAssets.Texts.packStatusCreated
+            case .notReady: status = PackListAssets.Texts.packStatusNotReady
+            case .confirmed: status = PackListAssets.Texts.packStatusConfirmed
+            case .adoptedAtSourceBranch: status = PackListAssets.Texts.packStatusAdoptedAtSourceBranch
+            case .sentFromSourceBranch: status = PackListAssets.Texts.packStatusSentFromSourceBranch
+            case .adoptedAtSortingCenter: status = PackListAssets.Texts.packStatusAdoptedAtSortingCenter
+            case .sentFromSortingCenter: status = PackListAssets.Texts.packStatusSentFromSortingCenter
+            case .other: status = PackListAssets.Texts.packStatusOther
+            case .delivered: status = PackListAssets.Texts.packStatusDelivered
+            case .returnedToSender: status = PackListAssets.Texts.packStatusReturnedToSender
+            case .avizo: status = PackListAssets.Texts.packStatusAvizo
+            case .outForDelivery: status = PackListAssets.Texts.packStatusOutForDelivery
+            case .readyToPickup: status = PackListAssets.Texts.packStatusReadyToPickup
+            case .pickupTimeExpired: status = PackListAssets.Texts.packStatusPickupTimeExpired
             }
         }
     }

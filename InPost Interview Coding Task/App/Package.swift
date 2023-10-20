@@ -1,12 +1,13 @@
-// swift-tools-version: 5.8
+// swift-tools-version: 5.9
 
 import PackageDescription
 
 let package = Package(
     name: "App",
+    defaultLocalization: "pl",
     platforms: [.iOS(.v16)],
     products: [
-        .library(target: .App),
+        .library(target: .Localizable),
         .library(target: .Pack),
     ],
     dependencies: [
@@ -14,14 +15,14 @@ let package = Package(
         .package(.InPostKit),
     ],
     targets: [
-        .target(name: .App, dependencies: [.Pack]),
-        .target(name: .Pack, dependencies: [.PackService, .DI, .UI], resources: [.process("Pack.xcassets")]),
-        .testTarget(name: .PackTests, dependencies: [.Pack]),
+        .target(name: .Localizable, dependencies: [], resources: [.process("Resources")]),
+        .target(name: .Pack, dependencies: [.PackService, .DI, .UI, .Localizable], resources: [.process("Resources")]),
+        .testTarget(name: .PackTests, dependencies: [.Pack, .PackService, .Localizable]),
     ]
 )
 
 enum Targets: String {
-    case App
+    case Localizable
     case Pack
     case PackTests
 }
@@ -29,9 +30,11 @@ enum Targets: String {
 enum Dependencies: String {
     // App
     case Pack
+    case Localizable
 
     // Domain
     case PackService
+
     // InPostKit
     case UI
     case DI
@@ -39,7 +42,7 @@ enum Dependencies: String {
     func dependency() -> Target.Dependency {
         switch self {
         // App
-        case .Pack:
+        case .Pack, .Localizable:
             return Target.Dependency(self)
 
         // Domain

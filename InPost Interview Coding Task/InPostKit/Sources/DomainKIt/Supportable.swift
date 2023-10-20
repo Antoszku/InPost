@@ -16,4 +16,3 @@ public enum Supportable<T: Codable>: Codable {
         }
     }
 }
-
