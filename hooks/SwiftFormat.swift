@@ -27,10 +27,10 @@ shell("export PATH=\"/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin\"")
 shell("echo \"Start SwiftFormat.swift script\"")
 shell("git diff --diff-filter=d --staged --name-only --output gitDiff")
 shell("""
-    for line in $(cat gitDiff | grep -e '\\.swift$')
-    do
-       swiftformat --swiftversion 5.7 -disable wrapMultilineStatementBraces -disable enumnamespaces $line
-        git add $line
+    IFS=$'\n'
+    for line in $(grep -e '\\.swift$' gitDiff); do
+        swiftformat --swiftversion 5.7 -disable wrapMultilineStatementBraces -disable enumnamespaces "$line"
+        git add "$line"
     done
     """
 )
