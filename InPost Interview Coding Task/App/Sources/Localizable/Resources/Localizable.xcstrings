@@ -51,7 +51,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pozostawione Awizo"
+            "value" : "Pozostawiono Awizo"
           }
         }
       }
@@ -62,7 +62,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Paczka przyjęta od Nadawcy"
+            "value" : "Odebrana od Nadawcy"
           }
         }
       }
@@ -84,7 +84,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Paczka odebrana"
+            "value" : "Odebrana"
           }
         }
       }
@@ -173,6 +173,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wysłana z Oddziału"
+          }
+        }
+      }
+    },
+    "packStatusUnsupported" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inne"
           }
         }
       }
