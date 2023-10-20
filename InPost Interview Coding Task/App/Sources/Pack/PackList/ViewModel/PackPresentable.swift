@@ -11,7 +11,6 @@ struct PackPresentable: Identifiable {
 
 extension PackPresentable {
     init(dto: PackDTO) {
-        // TODO: Tests
         id = dto.id
         packageNumber = dto.id
         sender = dto.sender

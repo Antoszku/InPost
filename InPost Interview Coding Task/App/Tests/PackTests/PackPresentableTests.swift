@@ -2,6 +2,14 @@
 import XCTest
 
 final class PackPresentableTests: XCTestCase {
+    func test_init_basicValues() {
+        let sut = PackPresentable(dto: .build(id: "123", sender: "some sender"))
+
+        XCTAssertEqual(sut.id, "123")
+        XCTAssertEqual(sut.packageNumber, "123")
+        XCTAssertEqual(sut.sender, "some sender")
+    }
+
     func test_init_status() {
         XCTAssertEqual(PackPresentable(dto: .build(status: .unsupported)).status, "Inne")
         XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.created))).status, "Przesyłka utworzona")
@@ -18,5 +26,11 @@ final class PackPresentableTests: XCTestCase {
         XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.outForDelivery))).status, "Wydana do doręczenia")
         XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.readyToPickup))).status, "Gotowa do odbioru")
         XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.pickupTimeExpired))).status, "Upłynął termin odbioru")
+    }
+
+    func test_init_image() {
+        XCTAssertEqual(PackPresentable(dto: .build(shipmentType: .unsupported)).image, nil)
+        XCTAssertEqual(PackPresentable(dto: .build(shipmentType: .supported(.courier))).image, PackListAssets.Images.courier)
+        XCTAssertEqual(PackPresentable(dto: .build(shipmentType: .supported(.parcelLocker))).image, PackListAssets.Images.parcelLocker)
     }
 }
