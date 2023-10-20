@@ -16,10 +16,10 @@ public class PackNetworking {
         return decoder
     }()
 
-    public func getPacks(completion: @escaping (Result<[Pack], Error>) -> Void) {
+    public func getPacks(completion: @escaping (Result<[PackDTO], Error>) -> Void) {
         let url = Bundle.module.url(forResource: "packs", withExtension: "json")!
         let data = try! Data(contentsOf: url)
-        let result = try! jsonDecoder.decode([Pack].self, from: data)
+        let result = try! jsonDecoder.decode([PackDTO].self, from: data)
         completion(.success(result))
     }
 }

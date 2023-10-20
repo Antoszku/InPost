@@ -2,7 +2,7 @@ import SwiftUI
 
 // TODO: Remove public properties after adding mainView
 public struct PackListView: View {
-    public init() { }
+    public init() {}
 
     @StateObject var viewModel = PackViewModel()
 
@@ -10,13 +10,13 @@ public struct PackListView: View {
         VStack {
             switch viewModel.state {
             case .loading: ProgressView()
-            case .data(let packs):
+            case let .data(packs):
                 ScrollView {
                     LazyVStack {
                         ForEach(packs) { pack in
                             PackCell(presentable: pack)
                         }
-                    }
+                    }.background(.red)
                 }
             }
         }.onAppear {

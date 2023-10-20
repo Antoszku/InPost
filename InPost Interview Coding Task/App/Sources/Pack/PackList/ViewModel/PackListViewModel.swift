@@ -1,8 +1,7 @@
-import PackService
 import Foundation
+import PackService
 
 final class PackViewModel: ObservableObject {
-
     enum State {
         case loading
         case data(packs: [PackPresentable])
@@ -15,10 +14,10 @@ final class PackViewModel: ObservableObject {
     func onAppear() {
         packNetworking.getPacks { result in
             switch result {
-            case .success(let packs):
+            case let .success(packs):
                 // TODO: remove task after change to async await
                 Task {
-                    await self.setState(.data(packs: packs.map { PackPresentable.init(id: $0.id, status: $0.status, sender: $0.sender) }))
+                    await self.setState(.data(packs: packs.map { PackPresentable(dto: $0) }))
                 }
 
             case .failure:

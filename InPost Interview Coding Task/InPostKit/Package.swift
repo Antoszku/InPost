@@ -3,67 +3,35 @@
 import PackageDescription
 
 let package = Package(
-    name: "App",
+    name: "InPostKit",
     platforms: [.iOS(.v16)],
     products: [
-        .library(target: .App),
-        .library(target: .Pack),
+        .library(target: .UI),
     ],
-    dependencies: [
-        .package(.Domain),
-        .package(.DI),
-        .package(.InPostKit),
-    ],
+    dependencies: [],
     targets: [
-        .target(name: .App, dependencies: [.Pack]),
-        .target(name: .Pack, dependencies: [.PackService, .Resolver, .UI], resources: [.process("Pack.xcassets")]),
-        .testTarget(name: .PackTests, dependencies: [.Pack]),
+        .target(name: .UI, resources: [.process("Resources")]),
     ]
 )
 
 enum Targets: String {
-    case App
-    case Pack
-    case PackTests
+    case UI
 }
 
 enum Dependencies: String {
-    // App
-    case Pack
-
-    // Domain
-    case PackService
-
-    // DI
-    case Resolver
-
-    // InPostKit
-    case UI
+    case Foo
 
     func dependency() -> Target.Dependency {
         switch self {
-        // App
-        case .Pack:
-            return Target.Dependency(self)
-
         // Domain
-        case .PackService:
-            return Target.Dependency(self, package: .Domain)
-
-        // DI
-        case .Resolver:
-            return Target.Dependency(self, package: .DI)
-
-        case .UI:
-            return Target.Dependency(self, package: .InPostKit)
+        case .Foo:
+            return Target.Dependency(self)
         }
     }
 }
 
 enum Packages: String {
-    case Domain
-    case DI
-    case InPostKit
+    case Foo
 }
 
 extension Target {

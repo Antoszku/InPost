@@ -24,7 +24,7 @@ import Foundation
  * 13. PICKUP_TIME_EXPIRED
  */
 
-public struct Pack: Codable {
+public struct PackDTO: Codable {
     public let id: String
     public let status: String
     public let sender: String

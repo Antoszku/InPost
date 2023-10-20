@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* AppDelegate.swift */; };
+		D671D9582913E528001FA9D5 /* InPostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D671D9572913E528001FA9D5 /* InPostApp.swift */; };
 		D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D671D9602913E529001FA9D5 /* Assets.xcassets */; };
 		DB2D03F62AE1B4E4007FE392 /* Pack in Frameworks */ = {isa = PBXBuildFile; productRef = DB2D03F52AE1B4E4007FE392 /* Pack */; };
+		DBC16A942AE2B2D600ED54F6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = DBC16A932AE2B2D600ED54F6 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D671D9542913E528001FA9D5 /* InPost Interview Coding Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InPost Interview Coding Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D671D9572913E528001FA9D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D671D9572913E528001FA9D5 /* InPostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPostApp.swift; sourceTree = "<group>"; };
 		D671D9602913E529001FA9D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB2BBA6D2AE1AD6C003E43AE /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		DB2BBA6E2AE1AE3A003E43AE /* DI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DI; sourceTree = "<group>"; };
 		DB2BBA6F2AE1AF1F003E43AE /* App */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = App; sourceTree = "<group>"; };
+		DBA2B22D2AE1DA320052E212 /* InPostKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = InPostKit; sourceTree = "<group>"; };
+		DBC16A932AE2B2D600ED54F6 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,12 +39,14 @@
 		D671D94B2913E528001FA9D5 = {
 			isa = PBXGroup;
 			children = (
+				DBC16A932AE2B2D600ED54F6 /* Localizable.xcstrings */,
 				DB2BBA6F2AE1AF1F003E43AE /* App */,
 				DB2BBA6E2AE1AE3A003E43AE /* DI */,
 				DB2BBA6D2AE1AD6C003E43AE /* Domain */,
+				DBA2B22D2AE1DA320052E212 /* InPostKit */,
+				DB2BBA702AE1B2A5003E43AE /* Frameworks */,
 				D671D9562913E528001FA9D5 /* InPost Interview Coding Task */,
 				D671D9552913E528001FA9D5 /* Products */,
-				DB2BBA702AE1B2A5003E43AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,7 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				D671D9882913E677001FA9D5 /* Assets */,
-				D671D9572913E528001FA9D5 /* AppDelegate.swift */,
+				D671D9572913E528001FA9D5 /* InPostApp.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -125,11 +130,11 @@
 			};
 			buildConfigurationList = D671D94F2913E528001FA9D5 /* Build configuration list for PBXProject "InPost Interview Coding Task" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = pl;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				pl,
 			);
 			mainGroup = D671D94B2913E528001FA9D5;
 			productRefGroup = D671D9552913E528001FA9D5 /* Products */;
@@ -146,6 +151,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBC16A942AE2B2D600ED54F6 /* Localizable.xcstrings in Resources */,
 				D671D9612913E529001FA9D5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,7 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D671D9582913E528001FA9D5 /* AppDelegate.swift in Sources */,
+				D671D9582913E528001FA9D5 /* InPostApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
