@@ -29,7 +29,7 @@ shell("git diff --diff-filter=d --staged --name-only --output gitDiff")
 shell("""
     IFS=$'\n'
     for line in $(grep -e '\\.swift$' gitDiff); do
-        swiftformat --swiftversion 5.7 -disable wrapMultilineStatementBraces -disable enumnamespaces "$line"
+        swiftformat --swiftversion 5.9 -disable wrapMultilineStatementBraces -disable enumnamespaces "$line"
         git add "$line"
     done
     """

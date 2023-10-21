@@ -33,4 +33,22 @@ final class PackPresentableTests: XCTestCase {
         XCTAssertEqual(PackPresentable(dto: .build(shipmentType: .supported(.courier))).image, PackListAssets.Images.courier)
         XCTAssertEqual(PackPresentable(dto: .build(shipmentType: .supported(.parcelLocker))).image, PackListAssets.Images.parcelLocker)
     }
+
+    func test_init_group() {
+        XCTAssertEqual(PackPresentable(dto: .build(status: .unsupported)).group, .inTransit)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.created))).group, .inTransit)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.notReady))).group, .inTransit)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.confirmed))).group, .inTransit)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.adoptedAtSourceBranch))).group, .inTransit)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.sentFromSourceBranch))).group, .inTransit)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.adoptedAtSortingCenter))).group, .inTransit)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.sentFromSortingCenter))).group, .inTransit)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.other))).group, .inTransit)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.delivered))).group, .deliveryCompleted)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.returnedToSender))).group, .deliveryCompleted)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.avizo))).group, .inTransit)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.outForDelivery))).group, .inTransit)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.readyToPickup))).group, .inTransit)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.pickupTimeExpired))).group, .deliveryCompleted)
+    }
 }

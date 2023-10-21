@@ -39,14 +39,14 @@ enum Dependencies: String {
         switch self {
         // Domain
         case .PackService:
-            return Target.Dependency(self)
+            Target.Dependency(self)
         // DI
         case .DomainKit, .DI:
-            return Target.Dependency(self, package: .InPostKit)
+            Target.Dependency(self, package: .InPostKit)
 
         // Networking
         case .Networking:
-            return Target.Dependency(self, package: .Networking)
+            Target.Dependency(self, package: .Networking)
         }
     }
 }

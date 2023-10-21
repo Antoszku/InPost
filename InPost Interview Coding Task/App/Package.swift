@@ -46,14 +46,14 @@ enum Dependencies: String {
         switch self {
         // App
         case .Pack, .Localizable:
-            return Target.Dependency(self)
+            Target.Dependency(self)
 
         // Domain
         case .PackService:
-            return Target.Dependency(self, package: .Domain)
+            Target.Dependency(self, package: .Domain)
 
         case .UI, .DI:
-            return Target.Dependency(self, package: .InPostKit)
+            Target.Dependency(self, package: .InPostKit)
         }
     }
 }

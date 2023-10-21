@@ -27,7 +27,7 @@ enum Dependencies: String {
         switch self {
         // InPostKit
         case .DI:
-            return Target.Dependency(self, package: .InPostKit)
+            Target.Dependency(self, package: .InPostKit)
         }
     }
 }

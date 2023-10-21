@@ -2,11 +2,17 @@ import PackService
 import SwiftUI
 
 struct PackPresentable: Identifiable, Equatable {
+    enum Group {
+        case inTransit
+        case deliveryCompleted
+    }
+
     let id: String
     let packageNumber: String
     let status: String
     let sender: String
     let image: Image?
+    let group: Group
 }
 
 extension PackPresentable {
@@ -14,6 +20,7 @@ extension PackPresentable {
         id = dto.id
         packageNumber = dto.id
         sender = dto.sender
+
         switch dto.shipmentType {
         case .unsupported: image = nil
         case let .supported(shipmentType):
@@ -41,6 +48,27 @@ extension PackPresentable {
             case .outForDelivery: status = PackListAssets.Texts.packStatusOutForDelivery
             case .readyToPickup: status = PackListAssets.Texts.packStatusReadyToPickup
             case .pickupTimeExpired: status = PackListAssets.Texts.packStatusPickupTimeExpired
+            }
+        }
+
+        switch dto.status {
+        case .unsupported: group = .inTransit
+        case let .supported(packStatus):
+            switch packStatus {
+            case .created: group = .inTransit
+            case .notReady: group = .inTransit
+            case .confirmed: group = .inTransit
+            case .adoptedAtSourceBranch: group = .inTransit
+            case .sentFromSourceBranch: group = .inTransit
+            case .adoptedAtSortingCenter: group = .inTransit
+            case .sentFromSortingCenter: group = .inTransit
+            case .other: group = .inTransit // TODO: What to do?
+            case .delivered: group = .deliveryCompleted
+            case .returnedToSender: group = .deliveryCompleted
+            case .avizo: group = .inTransit
+            case .outForDelivery: group = .inTransit
+            case .readyToPickup: group = .inTransit
+            case .pickupTimeExpired: group = .deliveryCompleted
             }
         }
     }

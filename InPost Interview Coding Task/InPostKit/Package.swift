@@ -32,7 +32,7 @@ enum Dependencies: String {
     func dependency() -> Target.Dependency {
         switch self {
         case .SwinjectAutoregistration:
-            return Target.Dependency(self)
+            Target.Dependency(self)
         }
     }
 }
