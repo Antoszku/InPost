@@ -1,7 +1,7 @@
 import PackService
 import SwiftUI
 
-struct PackPresentable: Identifiable {
+struct PackPresentable: Identifiable, Equatable {
     let id: String
     let packageNumber: String
     let status: String

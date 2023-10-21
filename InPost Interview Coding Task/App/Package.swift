@@ -7,6 +7,7 @@ let package = Package(
     defaultLocalization: "pl",
     platforms: [.iOS(.v16)],
     products: [
+        .library(target: .App),
         .library(target: .Localizable),
         .library(target: .Pack),
     ],
@@ -15,6 +16,7 @@ let package = Package(
         .package(.InPostKit),
     ],
     targets: [
+        .target(name: .App, dependencies: [.Pack, .DI]),
         .target(name: .Localizable, dependencies: [], resources: [.process("Resources")]),
         .target(name: .Pack, dependencies: [.PackService, .DI, .UI, .Localizable], resources: [.process("Resources")]),
         .testTarget(name: .PackTests, dependencies: [.Pack, .PackService, .Localizable]),
@@ -22,6 +24,7 @@ let package = Package(
 )
 
 enum Targets: String {
+    case App
     case Localizable
     case Pack
     case PackTests

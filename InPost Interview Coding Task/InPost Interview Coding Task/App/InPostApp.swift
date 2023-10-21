@@ -1,16 +1,18 @@
-import Pack
+import App
 import SwiftUI
 import UI
 
 @main
 struct InPostApp: App {
+    private let assembler = MainAssembler()
+
     init() {
         FontRegistration().register()
     }
 
     var body: some Scene {
         WindowGroup {
-            PackListView()
+            MainView(resolver: assembler.resolver)
         }
     }
 }

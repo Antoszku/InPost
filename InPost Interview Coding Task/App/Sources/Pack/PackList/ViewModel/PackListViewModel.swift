@@ -1,29 +1,26 @@
 import Foundation
 import PackService
 
-final class PackViewModel: ObservableObject {
-    enum State {
+final class PackListViewModel: ObservableObject {
+    enum State: Equatable {
         case loading
         case data(packs: [PackPresentable])
     }
 
-    private let packNetworking = PackNetworking()
+    private let interactor: PackListInteractor
+
+    init(interactor: PackListInteractor) {
+        self.interactor = interactor
+    }
 
     @Published var state = State.loading
 
-    func onAppear() {
-        packNetworking.getPacks { result in
-            switch result {
-            case let .success(packs):
-                // TODO: remove task after change to async await
-                Task {
-                    await self.setState(.data(packs: packs.map { PackPresentable(dto: $0) }))
-                }
-
-            case .failure:
-                break
-                // TODO: Handle Error
-            }
+    func onAppear() async {
+        do {
+            let packs = try await interactor.getPacks()
+            await setState(.data(packs: packs))
+        } catch {
+            // TODO: Handle Error
         }
     }
 

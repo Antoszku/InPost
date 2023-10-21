@@ -1,59 +1,39 @@
 // swift-tools-version: 5.9
-
 import PackageDescription
 
 let package = Package(
-    name: "Domain",
+    name: "Networking",
     platforms: [.iOS(.v16)],
     products: [
-        .library(target: .Domain),
-        .library(target: .PackService),
+        .library(target: .Networking),
     ],
     dependencies: [
         .package(.InPostKit),
-        .package(.Networking),
     ],
     targets: [
-        .target(name: .Domain, dependencies: [.DI, .PackService]),
-        .target(name: .PackService, dependencies: [.DI, .DomainKit, .Networking]),
+        .target(name: .Networking, dependencies: [.DI], resources: [.process("Resources")]),
     ]
 )
 
 enum Targets: String {
-    case Domain
-    case PackService
+    case Networking
 }
 
 enum Dependencies: String {
-    // Domain
-    case PackService
-
     // InPostKit
-    case DomainKit
     case DI
-
-    // Networking
-    case Networking
 
     func dependency() -> Target.Dependency {
         switch self {
-        // Domain
-        case .PackService:
-            return Target.Dependency(self)
-        // DI
-        case .DomainKit, .DI:
+        // InPostKit
+        case .DI:
             return Target.Dependency(self, package: .InPostKit)
-
-        // Networking
-        case .Networking:
-            return Target.Dependency(self, package: .Networking)
         }
     }
 }
 
 enum Packages: String {
     case InPostKit
-    case Networking
 }
 
 extension Target {

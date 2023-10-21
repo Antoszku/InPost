@@ -1,6 +1,6 @@
 import SwiftUI
 
-public final class FontRegistration {
+public struct FontRegistration {
     public init() {}
 
     public func register() {

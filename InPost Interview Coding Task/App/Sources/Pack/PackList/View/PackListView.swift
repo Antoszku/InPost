@@ -1,12 +1,9 @@
 import SwiftUI
 
-// TODO: Remove public properties after adding mainView
-public struct PackListView: View {
-    public init() {}
+struct PackListView: View {
+    @StateObject var viewModel: PackListViewModel
 
-    @StateObject var viewModel = PackViewModel()
-
-    public var body: some View {
+    var body: some View {
         VStack {
             switch viewModel.state {
             case .loading: ProgressView()
@@ -22,7 +19,7 @@ public struct PackListView: View {
         }.background(Color(uiColor: UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1))) // TODO: Change
             .onAppear {
                 Task {
-                    viewModel.onAppear()
+                    await viewModel.onAppear()
                 }
             }
     }
