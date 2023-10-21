@@ -7,16 +7,21 @@ struct PackListView: View {
         VStack {
             switch viewModel.state {
             case .loading: ProgressView()
-            case let .data(packs):
+            case let .data(sections):
                 ScrollView {
                     LazyVStack {
-                        ForEach(packs) { pack in
-                            PackCell(presentable: pack)
+                        ForEach(sections) { section in
+                            Section(header: SectionHeaderView(section: section)) {
+                                ForEach(section.variations) { pack in
+                                    PackCell(presentable: pack)
+                                }
+                            }
                         }
                     }
-                }
+                }.kerning(0.4)
             }
-        }.background(Color(uiColor: UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1))) // TODO: Change
+
+        }.background(ColorPalette.background)
             .onAppear {
                 Task {
                     await viewModel.onAppear()

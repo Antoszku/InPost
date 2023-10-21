@@ -2,17 +2,12 @@ import PackService
 import SwiftUI
 
 struct PackPresentable: Identifiable, Equatable {
-    enum Group {
-        case inTransit
-        case deliveryCompleted
-    }
-
     let id: String
     let packageNumber: String
     let status: String
     let sender: String
     let image: Image?
-    let group: Group
+    let packState: PackState
 }
 
 extension PackPresentable {
@@ -52,23 +47,23 @@ extension PackPresentable {
         }
 
         switch dto.status {
-        case .unsupported: group = .inTransit
+        case .unsupported: packState = .inTransit
         case let .supported(packStatus):
             switch packStatus {
-            case .created: group = .inTransit
-            case .notReady: group = .inTransit
-            case .confirmed: group = .inTransit
-            case .adoptedAtSourceBranch: group = .inTransit
-            case .sentFromSourceBranch: group = .inTransit
-            case .adoptedAtSortingCenter: group = .inTransit
-            case .sentFromSortingCenter: group = .inTransit
-            case .other: group = .inTransit // TODO: What to do?
-            case .delivered: group = .deliveryCompleted
-            case .returnedToSender: group = .deliveryCompleted
-            case .avizo: group = .inTransit
-            case .outForDelivery: group = .inTransit
-            case .readyToPickup: group = .inTransit
-            case .pickupTimeExpired: group = .deliveryCompleted
+            case .created: packState = .inTransit
+            case .notReady: packState = .inTransit
+            case .confirmed: packState = .inTransit
+            case .adoptedAtSourceBranch: packState = .inTransit
+            case .sentFromSourceBranch: packState = .inTransit
+            case .adoptedAtSortingCenter: packState = .inTransit
+            case .sentFromSortingCenter: packState = .inTransit
+            case .other: packState = .inTransit // TODO: What to do?
+            case .delivered: packState = .deliveryCompleted
+            case .returnedToSender: packState = .deliveryCompleted
+            case .avizo: packState = .inTransit
+            case .outForDelivery: packState = .inTransit
+            case .readyToPickup: packState = .inTransit
+            case .pickupTimeExpired: packState = .deliveryCompleted
             }
         }
     }

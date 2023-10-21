@@ -31,3 +31,11 @@ struct PackListAssets {
         static let courier = Image("courier", bundle: .module)
     }
 }
+
+// TODO: Move it after creating DesignSystem
+public enum ColorPalette {
+    public static let text = Color(#colorLiteral(red: 0.2509803922, green: 0.2509803922, blue: 0.2549019608, alpha: 1)) // #404041
+    public static let headerText = Color(#colorLiteral(red: 0.5725490196, green: 0.5803921569, blue: 0.5921568627, alpha: 1)) // #929497
+    public static let background = Color(#colorLiteral(red: 0.9490196078, green: 0.9490196078, blue: 0.9490196078, alpha: 1)) // #F2F2F2
+    public static let sectionHeader = Color(#colorLiteral(red: 0.7333333333, green: 0.7411764706, blue: 0.7490196078, alpha: 1)) // ##BBBDBF
+}

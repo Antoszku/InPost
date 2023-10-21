@@ -23,14 +23,7 @@ extension PackListView {
                         }
                     }
                 }.padding(.horizontal, 20)
-                Spacer()
             }.padding(.vertical, 16).background(.white)
         }
     }
-}
-
-// TODO: Move it after creating DesignSystem
-public enum ColorPalette {
-    public static let text = Color(#colorLiteral(red: 0.2509803922, green: 0.2509803922, blue: 0.2549019608, alpha: 1)) // #404041
-    public static let headerText = Color(#colorLiteral(red: 0.5725490196, green: 0.5803921569, blue: 0.5921568627, alpha: 1)) // #929497
 }

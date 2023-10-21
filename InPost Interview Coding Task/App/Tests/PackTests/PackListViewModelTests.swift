@@ -21,18 +21,45 @@ final class PackListViewModelTests: XCTestCase {
 
         await sut.onAppear()
 
-        XCTAssertEqual(sut.state, .data(packs: []))
+        XCTAssertEqual(sut.state, .data(sections: []))
     }
 
-    func testOnAppear_setStateToDataWithCorrectPacks_whenSuccessFromInteractor() async {
-        let packs: [PackPresentable] = [.build(id: "1"), .build(id: "2")]
+    func testOnAppear_setStateToDataWithInTransitSection_whenSuccessFromInteractor() async {
+        let packs: [PackPresentable] = [.build(id: "1", packState: .inTransit), .build(id: "2", packState: .inTransit)]
         let interactor = PackListInteractorStub()
         let sut = makeSut(interactor: interactor)
         interactor.getPacksReturn = packs
 
         await sut.onAppear()
 
-        XCTAssertEqual(sut.state, .data(packs: packs))
+        let section = PacksSectionPresentable(packState: .inTransit, packs: packs)
+        XCTAssertEqual(sut.state, .data(sections: [section]))
+    }
+
+    func testOnAppear_setStateToDataWithDeliveryCompletedSection_whenSuccessFromInteractor() async {
+        let packs: [PackPresentable] = [.build(id: "1", packState: .deliveryCompleted), .build(id: "2", packState: .deliveryCompleted)]
+        let interactor = PackListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+        interactor.getPacksReturn = packs
+
+        await sut.onAppear()
+
+        let section = PacksSectionPresentable(packState: .deliveryCompleted, packs: packs)
+        XCTAssertEqual(sut.state, .data(sections: [section]))
+    }
+
+    func testOnAppear_setStateToDataWithDeliveryCompletedAndInTransitSection() async {
+        let inTransitPack = PackPresentable.build(id: "1", packState: .inTransit)
+        let deliveryCompletedPack = PackPresentable.build(id: "2", packState: .deliveryCompleted)
+        let interactor = PackListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+        interactor.getPacksReturn = [inTransitPack, deliveryCompletedPack]
+
+        await sut.onAppear()
+
+        let inTransitSection = PacksSectionPresentable(packState: .inTransit, packs: [inTransitPack])
+        let deliveryCompletedSection = PacksSectionPresentable(packState: .deliveryCompleted, packs: [deliveryCompletedPack])
+        XCTAssertEqual(sut.state, .data(sections: [inTransitSection, deliveryCompletedSection]))
     }
 
     private func makeSut(interactor: PackListInteractor = PackListInteractorStub()) -> PackListViewModel {
