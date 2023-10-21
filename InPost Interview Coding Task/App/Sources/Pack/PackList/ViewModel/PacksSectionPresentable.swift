@@ -4,8 +4,8 @@ struct PacksSectionPresentable: Identifiable, Equatable {
     let variations: [PackPresentable]
 
     init(packState: PackState, packs: [PackPresentable]) {
-        id = packState.name
-        name = packState.name
+        id = packState.sectionName
+        name = packState.sectionName
         variations = packs
     }
 }

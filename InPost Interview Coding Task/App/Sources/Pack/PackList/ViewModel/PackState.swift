@@ -2,10 +2,10 @@ enum PackState {
     case inTransit
     case deliveryCompleted
 
-    var name: String {
+    var sectionName: String {
         switch self {
-        case .inTransit: "123"
-        case .deliveryCompleted: "123"
+        case .inTransit: PackListAssets.Texts.inTransitSectionTitle
+        case .deliveryCompleted: PackListAssets.Texts.deliveryCompletedSectionTitle
         }
     }
 }

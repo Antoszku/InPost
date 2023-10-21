@@ -19,6 +19,11 @@ struct PackListView: View {
                         }
                     }
                 }.kerning(0.4)
+                    .refreshable {
+                        Task {
+                            await viewModel.onPullToRefresh()
+                        }
+                    }
             }
 
         }.background(ColorPalette.background)

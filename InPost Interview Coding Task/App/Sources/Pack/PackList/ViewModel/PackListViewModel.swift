@@ -16,18 +16,27 @@ final class PackListViewModel: ObservableObject {
     @Published var state = State.loading
 
     func onAppear() async {
+        await loadData()
+    }
+
+    func onPullToRefresh() async {
+        await loadData()
+    }
+
+    @MainActor
+    private func setState(_ state: State) {
+        self.state = state
+    }
+
+    private func loadData() async {
         do {
+            await setState(.loading)
             let packs = try await interactor.getPacks()
             let sections = buildSection(from: packs)
             await setState(.data(sections: sections))
         } catch {
             // TODO: Handle Error
         }
-    }
-
-    @MainActor
-    private func setState(_ state: State) {
-        self.state = state
     }
 
     private func buildSection(from packs: [PackPresentable]) -> [PacksSectionPresentable] {

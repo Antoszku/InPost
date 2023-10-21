@@ -1,6 +1,28 @@
 {
   "sourceLanguage" : "pl",
   "strings" : {
+    "deliveryCompletedSectionTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozostałe"
+          }
+        }
+      }
+    },
+    "inTransitSectionTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gotowe do odbioru"
+          }
+        }
+      }
+    },
     "more" : {
       "extractionState" : "manual",
       "localizations" : {
