@@ -14,7 +14,13 @@ extension PackListView {
                             Spacer()
                             presentable.image
                         }
-                        HeaderValueLabel(header: PackListAssets.Texts.status, value: presentable.status, valueFont: .bold)
+                        HStack {
+                            HeaderValueLabel(header: PackListAssets.Texts.status, value: presentable.status, valueFont: .bold)
+                            if let packDateStatus = presentable.packDateStatus {
+                                Spacer()
+                                HeaderValueLabel(header: packDateStatus.title, value: packDateStatus.date, valueFont: .medium, alignment: .trailing)
+                            }
+                        }
                         HStack {
                             HeaderValueLabel(header: PackListAssets.Texts.sender, value: presentable.sender, valueFont: .bold)
                             Spacer()

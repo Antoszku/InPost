@@ -6,8 +6,14 @@ struct PackPresentable: Identifiable, Equatable {
     let packageNumber: String
     let status: String
     let sender: String
-    let image: Image?
+    let packDateStatus: PackDateStatus?
+    let image: Image? // TODO: CHANGE
     let packState: PackState
+
+    struct PackDateStatus: Equatable {
+        let title: String
+        let date: String
+    }
 }
 
 extension PackPresentable {
@@ -15,56 +21,85 @@ extension PackPresentable {
         id = dto.id
         packageNumber = dto.id
         sender = dto.sender
+        packDateStatus = Self.packDateStatus(for: dto)
 
         switch dto.shipmentType {
         case .unsupported: image = nil
         case let .supported(shipmentType):
-            switch shipmentType {
-            case .courier: image = PackListAssets.Images.courier
-            case .parcelLocker: image = PackListAssets.Images.parcelLocker
-            }
+            image = Self.image(for: shipmentType)
         }
 
         switch dto.status {
         case .unsupported: status = PackListAssets.Texts.packStatusUnsupported
         case let .supported(packStatus):
-            switch packStatus {
-            case .created: status = PackListAssets.Texts.packStatusCreated
-            case .notReady: status = PackListAssets.Texts.packStatusNotReady
-            case .confirmed: status = PackListAssets.Texts.packStatusConfirmed
-            case .adoptedAtSourceBranch: status = PackListAssets.Texts.packStatusAdoptedAtSourceBranch
-            case .sentFromSourceBranch: status = PackListAssets.Texts.packStatusSentFromSourceBranch
-            case .adoptedAtSortingCenter: status = PackListAssets.Texts.packStatusAdoptedAtSortingCenter
-            case .sentFromSortingCenter: status = PackListAssets.Texts.packStatusSentFromSortingCenter
-            case .other: status = PackListAssets.Texts.packStatusOther
-            case .delivered: status = PackListAssets.Texts.packStatusDelivered
-            case .returnedToSender: status = PackListAssets.Texts.packStatusReturnedToSender
-            case .avizo: status = PackListAssets.Texts.packStatusAvizo
-            case .outForDelivery: status = PackListAssets.Texts.packStatusOutForDelivery
-            case .readyToPickup: status = PackListAssets.Texts.packStatusReadyToPickup
-            case .pickupTimeExpired: status = PackListAssets.Texts.packStatusPickupTimeExpired
-            }
+            status = Self.status(for: packStatus)
         }
 
         switch dto.status {
         case .unsupported: packState = .inTransit
         case let .supported(packStatus):
-            switch packStatus {
-            case .created: packState = .inTransit
-            case .notReady: packState = .inTransit
-            case .confirmed: packState = .inTransit
-            case .adoptedAtSourceBranch: packState = .inTransit
-            case .sentFromSourceBranch: packState = .inTransit
-            case .adoptedAtSortingCenter: packState = .inTransit
-            case .sentFromSortingCenter: packState = .inTransit
-            case .other: packState = .inTransit // TODO: What to do?
-            case .delivered: packState = .deliveryCompleted
-            case .returnedToSender: packState = .deliveryCompleted
-            case .avizo: packState = .inTransit
-            case .outForDelivery: packState = .inTransit
-            case .readyToPickup: packState = .inTransit
-            case .pickupTimeExpired: packState = .deliveryCompleted
-            }
+            packState = Self.packState(for: packStatus)
+        }
+    }
+
+    private static func packDateStatus(for dto: PackDTO) -> PackDateStatus? {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E | dd.MM.yy | HH:mm"
+        formatter.locale = Locale(identifier: "pl") // TODO: MOVE
+
+        if let pickupDate = dto.pickupDate {
+            let dateString = formatter.string(from: pickupDate)
+            return PackDateStatus(title: PackListAssets.Texts.packDateStatePickedUp, date: dateString)
+        } else if let expiryDate = dto.expiryDate {
+            let dateString = formatter.string(from: expiryDate)
+            return PackDateStatus(title: PackListAssets.Texts.packDateStateReadyForPickUp, date: dateString)
+        } else {
+            return nil
+        }
+    }
+
+    private static func image(for shipmentType: PackDTO.ShipmentType) -> Image {
+        switch shipmentType {
+        case .courier: PackListAssets.Images.courier
+        case .parcelLocker: PackListAssets.Images.parcelLocker
+        }
+    }
+
+    private static func status(for packStatus: PackDTO.Status) -> String {
+        switch packStatus {
+        case .created: PackListAssets.Texts.packStatusCreated
+        case .notReady: PackListAssets.Texts.packStatusNotReady
+        case .confirmed: PackListAssets.Texts.packStatusConfirmed
+        case .adoptedAtSourceBranch: PackListAssets.Texts.packStatusAdoptedAtSourceBranch
+        case .sentFromSourceBranch: PackListAssets.Texts.packStatusSentFromSourceBranch
+        case .adoptedAtSortingCenter: PackListAssets.Texts.packStatusAdoptedAtSortingCenter
+        case .sentFromSortingCenter: PackListAssets.Texts.packStatusSentFromSortingCenter
+        case .other: PackListAssets.Texts.packStatusOther
+        case .delivered: PackListAssets.Texts.packStatusDelivered
+        case .returnedToSender: PackListAssets.Texts.packStatusReturnedToSender
+        case .avizo: PackListAssets.Texts.packStatusAvizo
+        case .outForDelivery: PackListAssets.Texts.packStatusOutForDelivery
+        case .readyToPickup: PackListAssets.Texts.packStatusReadyToPickup
+        case .pickupTimeExpired: PackListAssets.Texts.packStatusPickupTimeExpired
+        }
+    }
+
+    private static func packState(for packStatus: PackDTO.Status) -> PackState {
+        switch packStatus {
+        case .created: .inTransit
+        case .notReady: .inTransit
+        case .confirmed: .inTransit
+        case .adoptedAtSourceBranch: .inTransit
+        case .sentFromSourceBranch: .inTransit
+        case .adoptedAtSortingCenter: .inTransit
+        case .sentFromSortingCenter: .inTransit
+        case .other: .inTransit // TODO: What to do?
+        case .delivered: .deliveryCompleted
+        case .returnedToSender: .deliveryCompleted
+        case .avizo: .inTransit
+        case .outForDelivery: .inTransit
+        case .readyToPickup: .inTransit
+        case .pickupTimeExpired: .deliveryCompleted
         }
     }
 }

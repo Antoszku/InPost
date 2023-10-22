@@ -26,6 +26,8 @@ struct PackListAssets {
         static let packStatusPickupTimeExpired = "packStatusPickupTimeExpired".localized
         static let inTransitSectionTitle = "inTransitSectionTitle".localized
         static let deliveryCompletedSectionTitle = "deliveryCompletedSectionTitle".localized
+        static let packDateStatePickedUp = "packDateStatePickedUp".localized
+        static let packDateStateReadyForPickUp = "packDateStateReadyForPickUp".localized
     }
 
     struct Images {

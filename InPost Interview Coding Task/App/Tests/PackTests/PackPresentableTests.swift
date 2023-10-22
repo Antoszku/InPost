@@ -51,4 +51,24 @@ final class PackPresentableTests: XCTestCase {
         XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.readyToPickup))).packState, .inTransit)
         XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.pickupTimeExpired))).packState, .deliveryCompleted)
     }
+
+    func test_init_packDateIsNil_whenAllDatesAreNil() {
+        XCTAssertEqual(PackPresentable(dto: .build(expiryDate: nil, pickupDate: nil, storedDate: nil)).packDateStatus, nil)
+    }
+
+    func test_init_packDate_whenPickupDateIsNotNil() {
+        let calendar = Calendar.current
+        let startOfYear2020 = calendar.date(from: DateComponents(year: 2020, month: 1, day: 2, hour: 15, minute: 20))!
+
+        let expectedValue = PackPresentable.PackDateStatus(title: "Odebrana", date: "czw. | 02.01.20 | 15:20")
+        XCTAssertEqual(PackPresentable(dto: .build(pickupDate: startOfYear2020)).packDateStatus, expectedValue)
+    }
+
+    func test_init_packDate_whenExpiryDateIsNotNil() {
+        let calendar = Calendar.current
+        let startOfYear2020 = calendar.date(from: DateComponents(year: 2021, month: 2, day: 3, hour: 11, minute: 15))!
+
+        let expectedValue = PackPresentable.PackDateStatus(title: "Czeka na odbiór do", date: "śr. | 03.02.21 | 11:15")
+        XCTAssertEqual(PackPresentable(dto: .build(expiryDate: startOfYear2020)).packDateStatus, expectedValue)
+    }
 }

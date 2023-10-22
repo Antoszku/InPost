@@ -45,6 +45,28 @@
         }
       }
     },
+    "packDateStatePickedUp" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odebrana"
+          }
+        }
+      }
+    },
+    "packDateStateReadyForPickUp" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Czeka na odbiór do"
+          }
+        }
+      }
+    },
     "packListNavigationTitle" : {
       "extractionState" : "manual",
       "localizations" : {
