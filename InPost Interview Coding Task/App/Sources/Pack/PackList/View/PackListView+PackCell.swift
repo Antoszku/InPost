@@ -12,7 +12,7 @@ extension PackListView {
                         HStack {
                             HeaderValueLabel(header: PackListAssets.Texts.packageNumber, value: presentable.packageNumber, valueFont: .medium)
                             Spacer()
-                            presentable.image
+                            presentable.icon
                         }
                         HStack {
                             HeaderValueLabel(header: PackListAssets.Texts.status, value: presentable.status, valueFont: .bold)

@@ -29,9 +29,9 @@ final class PackPresentableTests: XCTestCase {
     }
 
     func test_init_image() {
-        XCTAssertEqual(PackPresentable(dto: .build(shipmentType: .unsupported)).image, nil)
-        XCTAssertEqual(PackPresentable(dto: .build(shipmentType: .supported(.courier))).image, PackListAssets.Images.courier)
-        XCTAssertEqual(PackPresentable(dto: .build(shipmentType: .supported(.parcelLocker))).image, PackListAssets.Images.parcelLocker)
+        XCTAssertEqual(PackPresentable(dto: .build(shipmentType: .unsupported)).icon, nil)
+        XCTAssertEqual(PackPresentable(dto: .build(shipmentType: .supported(.courier))).icon, PackListAssets.Images.courier)
+        XCTAssertEqual(PackPresentable(dto: .build(shipmentType: .supported(.parcelLocker))).icon, PackListAssets.Images.parcelLocker)
     }
 
     func test_init_packState() {

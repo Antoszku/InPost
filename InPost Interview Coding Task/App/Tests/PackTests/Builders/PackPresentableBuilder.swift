@@ -13,7 +13,7 @@ extension PackPresentable {
                         packageNumber: packageNumber,
                         status: status,
                         sender: sender, packDateStatus: packDateStatus,
-                        image: image,
+                        icon: image,
                         packState: packState)
     }
 }

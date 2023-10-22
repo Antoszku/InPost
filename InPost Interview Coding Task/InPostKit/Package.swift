@@ -9,6 +9,7 @@ let package = Package(
         .library(target: .UI),
         .library(target: .DomainKit),
         .library(target: .DI),
+        .library(target: .InPostAppKit),
     ],
     dependencies: [
         .package(url: "https://github.com/Swinject/SwinjectAutoregistration.git", from: "2.8.3"),
@@ -16,6 +17,7 @@ let package = Package(
     targets: [
         .target(name: .UI, resources: [.process("Resources")]),
         .target(name: .DomainKit),
+        .target(name: .InPostAppKit),
         .target(name: .DI, dependencies: [.SwinjectAutoregistration]),
     ]
 )
@@ -24,6 +26,7 @@ enum Targets: String {
     case UI
     case DomainKit
     case DI
+    case InPostAppKit
 }
 
 enum Dependencies: String {

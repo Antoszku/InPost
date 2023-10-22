@@ -1,3 +1,4 @@
+import InPostAppKit
 import PackService
 import SwiftUI
 
@@ -7,7 +8,7 @@ struct PackPresentable: Identifiable, Equatable {
     let status: String
     let sender: String
     let packDateStatus: PackDateStatus?
-    let image: Image? // TODO: CHANGE
+    let icon: Image?
     let packState: PackState
 
     struct PackDateStatus: Equatable {
@@ -24,9 +25,9 @@ extension PackPresentable {
         packDateStatus = Self.packDateStatus(for: dto)
 
         switch dto.shipmentType {
-        case .unsupported: image = nil
+        case .unsupported: icon = nil
         case let .supported(shipmentType):
-            image = Self.image(for: shipmentType)
+            icon = Self.image(for: shipmentType)
         }
 
         switch dto.status {
@@ -45,7 +46,7 @@ extension PackPresentable {
     private static func packDateStatus(for dto: PackDTO) -> PackDateStatus? {
         let formatter = DateFormatter()
         formatter.dateFormat = "E | dd.MM.yy | HH:mm"
-        formatter.locale = Locale(identifier: "pl") // TODO: MOVE
+        formatter.locale = AppConfiguration.locale
 
         if let pickupDate = dto.pickupDate {
             let dateString = formatter.string(from: pickupDate)

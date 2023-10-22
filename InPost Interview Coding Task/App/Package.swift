@@ -18,7 +18,7 @@ let package = Package(
     targets: [
         .target(name: .App, dependencies: [.Pack, .DI]),
         .target(name: .Localizable, dependencies: [], resources: [.process("Resources")]),
-        .target(name: .Pack, dependencies: [.PackService, .DI, .UI, .Localizable], resources: [.process("Resources")]),
+        .target(name: .Pack, dependencies: [.PackService, .DI, .UI, .Localizable, .InPostAppKit], resources: [.process("Resources")]),
         .testTarget(name: .PackTests, dependencies: [.Pack, .PackService, .Localizable]),
     ]
 )
@@ -41,6 +41,7 @@ enum Dependencies: String {
     // InPostKit
     case UI
     case DI
+    case InPostAppKit
 
     func dependency() -> Target.Dependency {
         switch self {
@@ -52,7 +53,7 @@ enum Dependencies: String {
         case .PackService:
             Target.Dependency(self, package: .Domain)
 
-        case .UI, .DI:
+        case .UI, .DI, .InPostAppKit:
             Target.Dependency(self, package: .InPostKit)
         }
     }

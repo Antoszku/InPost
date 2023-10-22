@@ -9,7 +9,7 @@ public struct NetworkingAssembler {
     @discardableResult
     public init(resolver: Resolver) {
         resolver.register(APIClient.self) { _ in
-            MockApiClient(fileName: MockFile.packs.rawValue)
+            MockApiClient(fileName: MockFile.multipleStatuses.rawValue)
         }
 //        resolver.register(APIClient.self, initializer: DefaultApiClient.init) // TODO: Explain in documentation
     }
