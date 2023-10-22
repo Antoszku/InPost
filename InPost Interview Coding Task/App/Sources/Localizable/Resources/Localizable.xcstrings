@@ -45,6 +45,17 @@
         }
       }
     },
+    "packListNavigationTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "InPost recruitment task"
+          }
+        }
+      }
+    },
     "packStatusAdoptedAtSortingCenter" : {
       "extractionState" : "manual",
       "localizations" : {
