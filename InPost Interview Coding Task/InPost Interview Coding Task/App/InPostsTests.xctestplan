@@ -18,6 +18,20 @@
         "identifier" : "PackTests",
         "name" : "PackTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:DataStorage",
+        "identifier" : "DataStorageTests",
+        "name" : "DataStorageTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Domain",
+        "identifier" : "PackServiceTests",
+        "name" : "PackServiceTests"
+      }
     }
   ],
   "version" : 1

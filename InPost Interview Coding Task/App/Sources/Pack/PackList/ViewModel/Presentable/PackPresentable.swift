@@ -3,7 +3,9 @@ import PackService
 import SwiftUI
 
 struct PackPresentable: Identifiable, Equatable {
-    let id: String
+    typealias ID = Identifier<PackPresentable>
+
+    let id: Identifier<PackPresentable>
     let packageNumber: String
     let status: String
     let sender: String
@@ -18,7 +20,7 @@ struct PackPresentable: Identifiable, Equatable {
 
 extension PackPresentable {
     init(dto: PackDTO) {
-        id = dto.id
+        id = ID(dto.id)
         packageNumber = dto.id
         sender = dto.sender
         expiryDate = dto.expiryDate

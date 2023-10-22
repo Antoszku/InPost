@@ -1,6 +1,17 @@
 {
   "sourceLanguage" : "pl",
   "strings" : {
+    "archive" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archiwizuj"
+          }
+        }
+      }
+    },
     "deliveryCompletedSectionTitle" : {
       "extractionState" : "manual",
       "localizations" : {

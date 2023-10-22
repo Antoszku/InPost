@@ -13,7 +13,9 @@ struct PackListView: View {
                         ForEach(sections) { section in
                             Section(header: SectionHeaderView(section: section)) {
                                 ForEach(section.variations) { pack in
-                                    PackCell(presentable: pack)
+                                    PackCell(pack: pack)
+                                        .onTapGesture { viewModel.expandedPackCell = pack }
+                                        .animation(.linear(duration: 0.2), value: viewModel.expandedPackCell)
                                 }
                             }
                         }
@@ -22,7 +24,7 @@ struct PackListView: View {
                     .refreshable { Task { await viewModel.onPullToRefresh() } }
             }
 
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        }.environmentObject(viewModel).frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(ColorPalette.background)
 
             .onAppear { Task { await viewModel.onAppear() } }

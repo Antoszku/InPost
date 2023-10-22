@@ -3,68 +3,46 @@
 import PackageDescription
 
 let package = Package(
-    name: "Domain",
+    name: "DataStorage",
     platforms: [.iOS(.v16)],
     products: [
-        .library(target: .Domain),
-        .library(target: .PackService),
+        .library(target: .DataStorage),
     ],
     dependencies: [
         .package(.InPostKit),
-        .package(.Networking),
-        .package(.DataStorage),
     ],
     targets: [
-        .target(name: .Domain, dependencies: [.PackService]),
-        .target(name: .PackService, dependencies: [.DI, .DomainKit, .Networking, .DataStorage]),
-        .testTarget(name: .PackServiceTests, dependencies: [.PackService]),
+        .target(name: .DataStorage, dependencies: [.DI]),
+        .testTarget(name: .DataStorageTests, dependencies: [.DataStorage]),
     ]
 )
 
 enum Targets: String {
-    case Domain
-    case PackService
-    case PackServiceTests
+    case DataStorage
+    case DataStorageTests
 }
 
 enum Dependencies: String {
-    // Domain
-    case PackService
+    // Data Storage
+    case DataStorage
 
     // InPostKit
-    case DomainKit
     case DI
-
-    // Networking
-    case Networking
-
-    // DataStorage
-    case DataStorage
 
     func dependency() -> Target.Dependency {
         switch self {
-        // Domain
-        case .PackService:
-            Target.Dependency(self)
-        // DI
-        case .DomainKit, .DI:
-            Target.Dependency(self, package: .InPostKit)
-
-        // Networking
-        case .Networking:
-            Target.Dependency(self, package: .Networking)
-
-        // DataStorage
+        // Data Storage
         case .DataStorage:
-            Target.Dependency(self, package: .DataStorage)
+            Target.Dependency(self)
+        // InPostKit
+        case .DI:
+            Target.Dependency(self, package: .InPostKit)
         }
     }
 }
 
 enum Packages: String {
     case InPostKit
-    case Networking
-    case DataStorage
 }
 
 extension Target {

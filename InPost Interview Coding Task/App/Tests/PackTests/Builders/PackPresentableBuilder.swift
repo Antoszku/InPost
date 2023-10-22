@@ -13,7 +13,7 @@ extension PackPresentable {
                       icon: Image? = nil,
                       packState: PackState = .inTransit,
                       sortOrderNumber: Int = 0) -> PackPresentable {
-        PackPresentable(id: id,
+        PackPresentable(id: .init(id),
                         packageNumber: packageNumber,
                         status: status,
                         sender: sender,

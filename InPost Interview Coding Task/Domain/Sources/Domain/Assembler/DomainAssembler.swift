@@ -1,3 +1,4 @@
+import DataStorage
 import DI
 import Networking
 import PackService
@@ -7,5 +8,6 @@ public struct DomainAssembler {
     public init(resolver: Resolver) {
         PackServiceAssembler(resolver: resolver)
         NetworkingAssembler(resolver: resolver)
+        DataStorageAssembler(resolver: resolver)
     }
 }

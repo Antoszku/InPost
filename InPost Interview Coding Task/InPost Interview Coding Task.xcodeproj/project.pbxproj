@@ -19,6 +19,7 @@
 		D671D9542913E528001FA9D5 /* InPost Interview Coding Task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InPost Interview Coding Task.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D671D9572913E528001FA9D5 /* InPostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPostApp.swift; sourceTree = "<group>"; };
 		D671D9602913E529001FA9D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB2ACDCB2AE5898300A0B85A /* DataStorage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = DataStorage; sourceTree = "<group>"; };
 		DB2BBA6D2AE1AD6C003E43AE /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
 		DB2BBA6F2AE1AF1F003E43AE /* App */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = App; sourceTree = "<group>"; };
 		DB4A1FCF2AE43C8A001B7B0E /* MainAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembler.swift; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		D671D94B2913E528001FA9D5 = {
 			isa = PBXGroup;
 			children = (
+				DB2ACDCB2AE5898300A0B85A /* DataStorage */,
 				DB2BBA6F2AE1AF1F003E43AE /* App */,
 				DB2BBA6D2AE1AD6C003E43AE /* Domain */,
 				DBA2B22D2AE1DA320052E212 /* InPostKit */,

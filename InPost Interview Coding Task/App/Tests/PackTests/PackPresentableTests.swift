@@ -7,7 +7,7 @@ final class PackPresentableTests: XCTestCase {
     func test_init_basicValues() {
         let sut = PackPresentable(dto: .build(id: "123", sender: "some sender"))
 
-        XCTAssertEqual(sut.id, "123")
+        XCTAssertEqual(sut.id, PackPresentable.ID("123"))
         XCTAssertEqual(sut.packageNumber, "123")
         XCTAssertEqual(sut.sender, "some sender")
     }

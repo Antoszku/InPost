@@ -19,8 +19,7 @@ final class PackListViewModelTests: XCTestCase {
     }
 
     func testOnAppear_setStateToData_whenSuccessFromInteractor() async {
-        let interactor = PackListInteractorStub()
-        let sut = makeSut(interactor: interactor)
+        let sut = makeSut()
 
         await sut.onAppear()
 
@@ -105,21 +104,22 @@ final class PackListViewModelTests: XCTestCase {
     func test_sortPacksBySortOrderNumber() async {
         let pack1 = PackPresentable.build(id: "1", sortOrderNumber: 4)
         let pack2 = PackPresentable.build(id: "2", sortOrderNumber: 2)
+        let pack3 = PackPresentable.build(id: "3", sortOrderNumber: 3)
         let interactor = PackListInteractorStub()
         let sut = makeSut(interactor: interactor)
-        interactor.getPacksReturn = [pack1, pack2]
+        interactor.getPacksReturn = [pack1, pack2, pack3]
 
         await sut.onAppear()
 
-        let expectedSection = PacksSectionPresentable(packState: .inTransit, packs: [pack2, pack1])
+        let expectedSection = PacksSectionPresentable(packState: .inTransit, packs: [pack1, pack3, pack2])
         XCTAssertEqual(sut.state, .data(sections: [expectedSection]))
     }
 
     func test_sortPacksBySortOrderNumber_forInTransitAndDeliveryCompletedPackStates() async {
-        let pack1 = PackPresentable.build(id: "1", packState: .inTransit, sortOrderNumber: 4)
-        let pack2 = PackPresentable.build(id: "2", packState: .inTransit, sortOrderNumber: 2)
-        let pack3 = PackPresentable.build(id: "3", packState: .deliveryCompleted, sortOrderNumber: 5)
-        let pack4 = PackPresentable.build(id: "4", packState: .deliveryCompleted, sortOrderNumber: 1)
+        let pack1 = PackPresentable.build(id: "1", packState: .inTransit, sortOrderNumber: 10)
+        let pack2 = PackPresentable.build(id: "2", packState: .inTransit, sortOrderNumber: 20)
+        let pack3 = PackPresentable.build(id: "3", packState: .deliveryCompleted, sortOrderNumber: 10)
+        let pack4 = PackPresentable.build(id: "4", packState: .deliveryCompleted, sortOrderNumber: 20)
         let interactor = PackListInteractorStub()
         let sut = makeSut(interactor: interactor)
         interactor.getPacksReturn = [pack1, pack2, pack3, pack4]
@@ -195,6 +195,72 @@ final class PackListViewModelTests: XCTestCase {
 
         let expectedSection = PacksSectionPresentable(packState: .inTransit, packs: [pack2, pack1])
         XCTAssertEqual(sut.state, .data(sections: [expectedSection]))
+    }
+
+    func test_onArchivePack_callInteractorArchivedPackId() async {
+        let pack = PackPresentable.build(id: "9")
+        let interactor = PackListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+        interactor.getPacksReturn = [pack]
+        await sut.onAppear()
+
+        await sut.onArchivePack(pack)
+
+        XCTAssertEqual(interactor.archivedPackCalledWithPackId, pack.id)
+    }
+
+    func test_onArchivePack_removePackFromData() async {
+        let packToArchive = PackPresentable.build(id: "1")
+        let pack = PackPresentable.build(id: "2")
+        let interactor = PackListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+        interactor.getPacksReturn = [packToArchive, pack]
+        await sut.onAppear()
+
+        await sut.onArchivePack(packToArchive)
+
+        let expectedValue = [PacksSectionPresentable(packState: .inTransit, packs: [pack])]
+        XCTAssertEqual(sut.state, .data(sections: expectedValue))
+    }
+
+    func test_doNotShowArchivedPacks() async {
+        let archivedId = "1"
+        let archivedPack = PackPresentable.build(id: archivedId)
+        let pack = PackPresentable.build(id: "2")
+        let interactor = PackListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+        interactor.getPacksReturn = [archivedPack, pack]
+        interactor.getArchivedPackIdsReturn = [.init(archivedId)]
+
+        await sut.onAppear()
+
+        XCTAssertEqual(sut.state, .data(sections: [.init(packState: .inTransit, packs: [pack])]))
+    }
+
+    func test_isExpandedPackCellReturnTrue() {
+        let pack = PackPresentable.build(id: "1")
+        let sut = makeSut()
+
+        sut.expandedPackCell = pack
+
+        XCTAssertTrue(sut.isExpandedPackCell(pack))
+    }
+
+    func test_isExpandedPackCellReturnFalse() {
+        let pack = PackPresentable.build(id: "1")
+        let sut = makeSut()
+
+        XCTAssertFalse(sut.isExpandedPackCell(pack))
+    }
+
+    func test_expandPackCellIsNil_whenCalledWithSameObject() {
+        let pack = PackPresentable.build(id: "1")
+        let sut = makeSut()
+
+        sut.expandedPackCell = pack
+        sut.expandedPackCell = pack
+
+        XCTAssertNil(sut.expandedPackCell)
     }
 
     private func makeSut(interactor: PackListInteractor = PackListInteractorStub()) -> PackListViewModel {

@@ -7,13 +7,21 @@ final class PackListViewModel: ObservableObject {
         case data(sections: [PacksSectionPresentable])
     }
 
+    @Published var state = State.loading
+    @Published var expandedPackCell: PackPresentable? {
+        didSet {
+            if expandedPackCell == oldValue {
+                expandedPackCell = nil
+            }
+        }
+    }
+
     private let interactor: PackListInteractor
+    private var packs = [PackPresentable]()
 
     init(interactor: PackListInteractor) {
         self.interactor = interactor
     }
-
-    @Published var state = State.loading
 
     func onAppear() async {
         await loadData()
@@ -21,6 +29,18 @@ final class PackListViewModel: ObservableObject {
 
     func onPullToRefresh() async {
         await loadData()
+    }
+
+    func isExpandedPackCell(_ pack: PackPresentable) -> Bool {
+        expandedPackCell == pack
+    }
+
+    func onArchivePack(_ pack: PackPresentable) async {
+        guard let index = packs.firstIndex(where: { $0.id == pack.id }) else { return }
+
+        interactor.archivePack(pack.id)
+        packs.remove(at: index)
+        await buildSection()
     }
 
     @MainActor
@@ -32,14 +52,15 @@ final class PackListViewModel: ObservableObject {
         do {
             await setState(.loading)
             let packs = try await interactor.getPacks()
-            let sections = buildSection(from: packs)
-            await setState(.data(sections: sections))
+            let filteredPacks = filterArchivedPacks(packs)
+            self.packs = filteredPacks
+            await buildSection()
         } catch {
             // TODO: Handle Error
         }
     }
 
-    private func buildSection(from packs: [PackPresentable]) -> [PacksSectionPresentable] {
+    private func buildSection() async {
         let sortedPacks = sortPacks(packs)
         var sections = [PacksSectionPresentable]()
         let inTransitPacks = sortedPacks.filter { $0.packState == .inTransit }
@@ -52,12 +73,18 @@ final class PackListViewModel: ObservableObject {
         if deliveryCompletedPacks.count > 0 {
             sections.append(PacksSectionPresentable(packState: .deliveryCompleted, packs: deliveryCompletedPacks))
         }
-        return sections
+        await setState(.data(sections: sections))
+    }
+
+    private func filterArchivedPacks(_ packs: [PackPresentable]) -> [PackPresentable] {
+        let archivedPackIds = interactor.getArchivedPackIds()
+        let filteredPacks = packs.filter { !archivedPackIds.contains($0.id) }
+        return filteredPacks
     }
 
     private func sortPacks(_ packs: [PackPresentable]) -> [PackPresentable] {
         packs.sorted(by: {
-            $0.sortOrderNumber < $1.sortOrderNumber
+            $0.sortOrderNumber > $1.sortOrderNumber
                 || $0.pickupDate ?? .distantPast > $1.pickupDate ?? .distantPast
                 || $0.expiryDate ?? .distantPast < $1.expiryDate ?? .distantPast
                 || $0.storedDate ?? .distantPast > $1.storedDate ?? .distantPast

@@ -1,7 +1,7 @@
 import DI
 
 public struct NetworkingAssembler {
-    enum MockFile: String {
+    private enum MockFile: String {
         case packs
         case packsWithMultipleStatuses
         case packsWithRandomOrderToCheckSorting
@@ -11,7 +11,7 @@ public struct NetworkingAssembler {
     @discardableResult
     public init(resolver: Resolver) {
         resolver.register(APIClient.self) { _ in
-            MockApiClient(fileName: MockFile.thousandPacksToCheckPerformance.rawValue)
+            MockApiClient(fileName: MockFile.packs.rawValue)
         }
 //        resolver.register(APIClient.self, initializer: DefaultApiClient.init) // TODO: Explain in documentation
     }

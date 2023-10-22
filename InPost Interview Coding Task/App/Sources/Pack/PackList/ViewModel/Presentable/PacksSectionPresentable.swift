@@ -1,10 +1,14 @@
+import InPostAppKit
+
 struct PacksSectionPresentable: Identifiable, Equatable {
-    let id: String
+    typealias ID = Identifier<PacksSectionPresentable>
+
+    let id: ID
     let name: String
     let variations: [PackPresentable]
 
     init(packState: PackState, packs: [PackPresentable]) {
-        id = packState.sectionName
+        id = ID(packState.sectionName)
         name = packState.sectionName
         variations = packs
     }

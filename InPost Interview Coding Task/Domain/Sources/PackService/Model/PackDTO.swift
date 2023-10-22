@@ -1,10 +1,3 @@
-//
-//  PackDTO.swift
-//  InPost Interview Coding Task
-//
-//  Created by Damian Piwowarski on 03/11/2022.
-//
-
 import DomainKit
 import Foundation
 
