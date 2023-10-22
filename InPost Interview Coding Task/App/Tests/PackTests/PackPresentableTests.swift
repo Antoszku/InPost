@@ -2,6 +2,8 @@
 import XCTest
 
 final class PackPresentableTests: XCTestCase {
+    private let calendar = Calendar.current
+
     func test_init_basicValues() {
         let sut = PackPresentable(dto: .build(id: "123", sender: "some sender"))
 
@@ -57,7 +59,6 @@ final class PackPresentableTests: XCTestCase {
     }
 
     func test_init_packDate_whenPickupDateIsNotNil() {
-        let calendar = Calendar.current
         let startOfYear2020 = calendar.date(from: DateComponents(year: 2020, month: 1, day: 2, hour: 15, minute: 20))!
 
         let expectedValue = PackPresentable.PackDateStatus(title: "Odebrana", date: "czw. | 02.01.20 | 15:20")
@@ -65,10 +66,27 @@ final class PackPresentableTests: XCTestCase {
     }
 
     func test_init_packDate_whenExpiryDateIsNotNil() {
-        let calendar = Calendar.current
         let startOfYear2020 = calendar.date(from: DateComponents(year: 2021, month: 2, day: 3, hour: 11, minute: 15))!
 
         let expectedValue = PackPresentable.PackDateStatus(title: "Czeka na odbiór do", date: "śr. | 03.02.21 | 11:15")
         XCTAssertEqual(PackPresentable(dto: .build(expiryDate: startOfYear2020)).packDateStatus, expectedValue)
+    }
+
+    func test_init_sortOrderNumber() {
+        XCTAssertEqual(PackPresentable(dto: .build(status: .unsupported)).sortOrderNumber, 1000)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.created))).sortOrderNumber, 10)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.notReady))).sortOrderNumber, 20)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.confirmed))).sortOrderNumber, 30)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.adoptedAtSourceBranch))).sortOrderNumber, 40)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.sentFromSourceBranch))).sortOrderNumber, 50)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.adoptedAtSortingCenter))).sortOrderNumber, 60)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.sentFromSortingCenter))).sortOrderNumber, 70)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.other))).sortOrderNumber, 80)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.delivered))).sortOrderNumber, 90)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.returnedToSender))).sortOrderNumber, 100)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.avizo))).sortOrderNumber, 110)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.outForDelivery))).sortOrderNumber, 120)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.readyToPickup))).sortOrderNumber, 130)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.pickupTimeExpired))).sortOrderNumber, 140)
     }
 }

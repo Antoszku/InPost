@@ -7,14 +7,13 @@ struct PackPresentable: Identifiable, Equatable {
     let packageNumber: String
     let status: String
     let sender: String
+    let expiryDate: Date?
+    let pickupDate: Date?
+    let storedDate: Date?
     let packDateStatus: PackDateStatus?
     let icon: Image?
     let packState: PackState
-
-    struct PackDateStatus: Equatable {
-        let title: String
-        let date: String
-    }
+    let sortOrderNumber: Int
 }
 
 extension PackPresentable {
@@ -22,6 +21,10 @@ extension PackPresentable {
         id = dto.id
         packageNumber = dto.id
         sender = dto.sender
+        expiryDate = dto.expiryDate
+        pickupDate = dto.pickupDate
+        storedDate = dto.storedDate
+
         packDateStatus = Self.packDateStatus(for: dto)
 
         switch dto.shipmentType {
@@ -31,15 +34,16 @@ extension PackPresentable {
         }
 
         switch dto.status {
-        case .unsupported: status = PackListAssets.Texts.packStatusUnsupported
+        case .unsupported:
+            // TODO: Explain
+            status = PackListAssets.Texts.packStatusUnsupported
+            packState = .inTransit
+            sortOrderNumber = 1000
+
         case let .supported(packStatus):
             status = Self.status(for: packStatus)
-        }
-
-        switch dto.status {
-        case .unsupported: packState = .inTransit
-        case let .supported(packStatus):
             packState = Self.packState(for: packStatus)
+            sortOrderNumber = Self.sortOrderNumber(from: packStatus)
         }
     }
 
@@ -101,6 +105,25 @@ extension PackPresentable {
         case .outForDelivery: .inTransit
         case .readyToPickup: .inTransit
         case .pickupTimeExpired: .deliveryCompleted
+        }
+    }
+
+    private static func sortOrderNumber(from status: PackDTO.Status) -> Int {
+        switch status {
+        case .created: 10
+        case .notReady: 20
+        case .confirmed: 30
+        case .adoptedAtSourceBranch: 40
+        case .sentFromSourceBranch: 50
+        case .adoptedAtSortingCenter: 60
+        case .sentFromSortingCenter: 70
+        case .other: 80
+        case .delivered: 90
+        case .returnedToSender: 100
+        case .avizo: 110
+        case .outForDelivery: 120
+        case .readyToPickup: 130
+        case .pickupTimeExpired: 140
         }
     }
 }

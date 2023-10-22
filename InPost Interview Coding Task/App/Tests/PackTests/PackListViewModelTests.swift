@@ -3,6 +3,8 @@ import Combine
 import XCTest
 
 final class PackListViewModelTests: XCTestCase {
+    private let calendar = Calendar.current
+
     func testInitialStateIsLoading() {
         XCTAssertEqual(makeSut().state, .loading)
     }
@@ -98,6 +100,101 @@ final class PackListViewModelTests: XCTestCase {
         await sut.onPullToRefresh()
 
         XCTAssertEqual(states, [.loading, .loading, .data(sections: [])])
+    }
+
+    func test_sortPacksBySortOrderNumber() async {
+        let pack1 = PackPresentable.build(id: "1", sortOrderNumber: 4)
+        let pack2 = PackPresentable.build(id: "2", sortOrderNumber: 2)
+        let interactor = PackListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+        interactor.getPacksReturn = [pack1, pack2]
+
+        await sut.onAppear()
+
+        let expectedSection = PacksSectionPresentable(packState: .inTransit, packs: [pack2, pack1])
+        XCTAssertEqual(sut.state, .data(sections: [expectedSection]))
+    }
+
+    func test_sortPacksBySortOrderNumber_forInTransitAndDeliveryCompletedPackStates() async {
+        let pack1 = PackPresentable.build(id: "1", packState: .inTransit, sortOrderNumber: 4)
+        let pack2 = PackPresentable.build(id: "2", packState: .inTransit, sortOrderNumber: 2)
+        let pack3 = PackPresentable.build(id: "3", packState: .deliveryCompleted, sortOrderNumber: 5)
+        let pack4 = PackPresentable.build(id: "4", packState: .deliveryCompleted, sortOrderNumber: 1)
+        let interactor = PackListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+        interactor.getPacksReturn = [pack1, pack2, pack3, pack4]
+
+        await sut.onAppear()
+
+        let expectedInTransitSection = PacksSectionPresentable(packState: .inTransit, packs: [pack2, pack1])
+        let expectedInDeliveryCompleted = PacksSectionPresentable(packState: .deliveryCompleted, packs: [pack4, pack3])
+        XCTAssertEqual(sut.state, .data(sections: [expectedInTransitSection, expectedInDeliveryCompleted]))
+    }
+
+    func test_sortPacksByPickupDate_whenSortOrderNumber_isSame() async {
+        // Sort by package that require faster pick up
+        let earlierDate = calendar.date(from: DateComponents(year: 2021))!
+        let laterDate = calendar.date(from: DateComponents(year: 2022))!
+
+        let pack1 = PackPresentable.build(id: "1", pickupDate: earlierDate)
+        let pack2 = PackPresentable.build(id: "2", pickupDate: laterDate)
+        let interactor = PackListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+        interactor.getPacksReturn = [pack1, pack2]
+
+        await sut.onAppear()
+
+        let expectedSection = PacksSectionPresentable(packState: .inTransit, packs: [pack2, pack1])
+        XCTAssertEqual(sut.state, .data(sections: [expectedSection]))
+    }
+
+    func test_sortPacksByExpireDate_whenSortOrderNumber_andPickupDate_isSame() async {
+        // Sort by package that were most recently picked up
+
+        let earlierDate = calendar.date(from: DateComponents(year: 2021))!
+        let laterDate = calendar.date(from: DateComponents(year: 2022))!
+
+        let pack1 = PackPresentable.build(id: "1", expiryDate: laterDate)
+        let pack2 = PackPresentable.build(id: "2", expiryDate: earlierDate)
+        let interactor = PackListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+        interactor.getPacksReturn = [pack1, pack2]
+
+        await sut.onAppear()
+
+        let expectedSection = PacksSectionPresentable(packState: .inTransit, packs: [pack2, pack1])
+        XCTAssertEqual(sut.state, .data(sections: [expectedSection]))
+    }
+
+    func test_sortPacksByStoredDate_whenSortOrderNumber_andPickupDate_andExpireDate_isSame() async {
+        // Sort by package that were most recently expired
+        let earlierDate = calendar.date(from: DateComponents(year: 2021))!
+        let laterDate = calendar.date(from: DateComponents(year: 2022))!
+
+        let pack1 = PackPresentable.build(id: "1", storedDate: earlierDate)
+        let pack2 = PackPresentable.build(id: "2", storedDate: laterDate)
+        let interactor = PackListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+        interactor.getPacksReturn = [pack1, pack2]
+
+        await sut.onAppear()
+
+        let expectedSection = PacksSectionPresentable(packState: .inTransit, packs: [pack2, pack1])
+        XCTAssertEqual(sut.state, .data(sections: [expectedSection]))
+    }
+
+    func test_sortPacksById_whenSortOrderNumber_andPickupDate_andExpireDate_andStoredDate_isSame() async {
+        // Sort by package id
+        let pack1 = PackPresentable.build(id: "2")
+        let pack2 = PackPresentable.build(id: "1")
+        let interactor = PackListInteractorStub()
+        let sut = makeSut(interactor: interactor)
+        interactor.getPacksReturn = [pack1, pack2]
+
+        await sut.onAppear()
+
+        let expectedSection = PacksSectionPresentable(packState: .inTransit, packs: [pack2, pack1])
+        XCTAssertEqual(sut.state, .data(sections: [expectedSection]))
     }
 
     private func makeSut(interactor: PackListInteractor = PackListInteractorStub()) -> PackListViewModel {

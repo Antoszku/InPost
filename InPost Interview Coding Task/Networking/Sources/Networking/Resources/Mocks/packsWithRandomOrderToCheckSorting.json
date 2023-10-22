@@ -1,0 +1,143 @@
+[
+    {
+        "id": "10000000000000000000003",
+        "status": "ADOPTED_AT_SOURCE_BRANCH",
+        "sender": "Sender 3",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "10000000000000000000019",
+        "status": "ADOPTED_AT_SOURCE_BRANCH",
+        "sender": "Sender 19",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "10000000000000000000004",
+        "status": "CREATED",
+        "sender": "Sender 4",
+        "shipmentType": "COURIER"
+    },
+    {
+        "id": "10000000000000000000018",
+        "status": "CREATED",
+        "sender": "Sender 18",
+        "shipmentType": "COURIER"
+    },
+    {
+        "id": "10000000000000000000012",
+        "status": "AVIZO",
+        "sender": "Sender 12",
+        "shipmentType": "COURIER"
+    },
+    {
+        "id": "10000000000000000000014",
+        "status": "SENT_FROM_SORTING_CENTER",
+        "sender": "Sender 14",
+        "shipmentType": "COURIER"
+    },
+    {
+        "id": "10000000000000000000020",
+        "status": "RETURNED_TO_SENDER",
+        "sender": "Sender 20",
+        "shipmentType": "COURIER"
+    },
+    {
+        "id": "10000000000000000000006",
+        "status": "RETURNED_TO_SENDER",
+        "sender": "Sender 6",
+        "shipmentType": "COURIER"
+    },
+    {
+        "id": "10000000000000000000008",
+        "status": "PICKUP_TIME_EXPIRED",
+        "sender": "Sender 8",
+        "shipmentType": "COURIER"
+    },
+    {
+        "id": "10000000000000000000002",
+        "status": "CONFIRMED",
+        "sender": "Sender 2",
+        "shipmentType": "COURIER"
+    },
+    {
+        "id": "10000000000000000000016",
+        "status": "CONFIRMED",
+        "sender": "Sender 16",
+        "shipmentType": "COURIER"
+    },
+    {
+        "id": "10000000000000000000015",
+        "status": "READY_TO_PICKUP",
+        "expiryDate": "2023-01-25T12:45:00Z",
+        "storedDate": "2023-01-13T16:15:00Z",
+        "sender": "Sender 15",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "10000000000000000000010",
+        "status": "READY_TO_PICKUP",
+        "expiryDate": "2023-01-15T14:30:00Z",
+        "storedDate": "2023-01-08T19:45:00Z",
+        "sender": "Sender 10",
+        "shipmentType": "COURIER"
+    },
+    {
+        "id": "10000000000000000000001",
+        "status": "READY_TO_PICKUP",
+        "expiryDate": "2023-01-01T12:00:00Z",
+        "storedDate": "2023-01-01T14:00:00Z",
+        "sender": "Sender 1",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "10000000000000000000011",
+        "status": "DELIVERED",
+        "pickupDate": "2023-01-18T13:00:00Z",
+        "sender": "Sender 11",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "10000000000000000000021",
+        "status": "DELIVERED",
+        "pickupDate": "2023-01-18T13:00:00Z",
+        "sender": "Sender 21",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "10000000000000000000023",
+        "status": "DELIVERED",
+        "pickupDate": "2023-01-22T09:30:00Z",
+        "sender": "Sender 22",
+        "shipmentType": "COURIER"
+    },
+    {
+        "id": "10000000000000000000005",
+        "status": "ADOPTED_AT_SOURCE_BRANCH",
+        "sender": "Sender 5",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "10000000000000000000007",
+        "status": "NOT_READY",
+        "sender": "Sender 7",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "10000000000000000000009",
+        "status": "CONFIRMED",
+        "sender": "Sender 9",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "10000000000000000000013",
+        "status": "CONFIRMED",
+        "sender": "Sender 13",
+        "shipmentType": "PARCEL_LOCKER"
+    },
+    {
+        "id": "10000000000000000000017",
+        "status": "OUT_FOR_DELIVERY",
+        "sender": "Sender 17",
+        "shipmentType": "PARCEL_LOCKER"
+    }
+]

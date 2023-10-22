@@ -6,14 +6,23 @@ extension PackPresentable {
                       packageNumber: String = "",
                       status: String = "",
                       sender: String = "",
+                      expiryDate: Date? = nil,
+                      pickupDate: Date? = nil,
+                      storedDate: Date? = nil,
                       packDateStatus: PackDateStatus? = nil,
-                      image: Image? = nil,
-                      packState: PackState = .inTransit) -> PackPresentable {
+                      icon: Image? = nil,
+                      packState: PackState = .inTransit,
+                      sortOrderNumber: Int = 0) -> PackPresentable {
         PackPresentable(id: id,
                         packageNumber: packageNumber,
                         status: status,
-                        sender: sender, packDateStatus: packDateStatus,
-                        icon: image,
-                        packState: packState)
+                        sender: sender,
+                        expiryDate: expiryDate,
+                        pickupDate: pickupDate,
+                        storedDate: storedDate,
+                        packDateStatus: packDateStatus,
+                        icon: icon,
+                        packState: packState,
+                        sortOrderNumber: sortOrderNumber)
     }
 }
