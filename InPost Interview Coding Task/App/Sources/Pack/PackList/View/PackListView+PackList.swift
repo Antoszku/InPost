@@ -11,7 +11,7 @@ extension PackListView {
                 LazyVStack {
                     ForEach(sections) { section in
                         Section(header: SectionHeaderView(section: section)) {
-                            ForEach(section.variations) { pack in
+                            ForEach(section.packs) { pack in
                                 PackCell(pack: pack)
                                     .onTapGesture { viewModel.expandedPackCell = pack }
                             }

@@ -37,10 +37,9 @@ extension PackPresentable {
 
         switch dto.status {
         case .unsupported:
-            // TODO: Explain
             status = PackListAssets.Texts.packStatusUnsupported
             packState = .inTransit
-            sortOrderNumber = 1000
+            sortOrderNumber = -1
 
         case let .supported(packStatus):
             status = Self.status(for: packStatus)
@@ -100,7 +99,7 @@ extension PackPresentable {
         case .sentFromSourceBranch: .inTransit
         case .adoptedAtSortingCenter: .inTransit
         case .sentFromSortingCenter: .inTransit
-        case .other: .inTransit // TODO: What to do?
+        case .other: .inTransit
         case .delivered: .deliveryCompleted
         case .returnedToSender: .deliveryCompleted
         case .avizo: .inTransit

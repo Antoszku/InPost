@@ -5,11 +5,11 @@ struct PacksSectionPresentable: Identifiable, Equatable {
 
     let id: ID
     let name: String
-    let variations: [PackPresentable]
+    let packs: [PackPresentable]
 
     init(packState: PackState, packs: [PackPresentable]) {
         id = ID(packState.sectionName)
         name = packState.sectionName
-        variations = packs
+        self.packs = packs
     }
 }

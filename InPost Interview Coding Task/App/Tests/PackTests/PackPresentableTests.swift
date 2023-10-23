@@ -73,7 +73,7 @@ final class PackPresentableTests: XCTestCase {
     }
 
     func test_init_sortOrderNumber() {
-        XCTAssertEqual(PackPresentable(dto: .build(status: .unsupported)).sortOrderNumber, 1000)
+        XCTAssertEqual(PackPresentable(dto: .build(status: .unsupported)).sortOrderNumber, -1)
         XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.created))).sortOrderNumber, 10)
         XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.notReady))).sortOrderNumber, 20)
         XCTAssertEqual(PackPresentable(dto: .build(status: .supported(.confirmed))).sortOrderNumber, 30)

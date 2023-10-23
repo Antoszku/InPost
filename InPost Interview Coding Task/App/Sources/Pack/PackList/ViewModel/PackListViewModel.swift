@@ -16,6 +16,7 @@ final class PackListViewModel: ObservableObject {
         }
     }
 
+    private let packPresentableSorter = PackPresentableSorter()
     private let interactor: PackListInteractor
     private var packs = [PackPresentable]()
 
@@ -61,7 +62,7 @@ final class PackListViewModel: ObservableObject {
     }
 
     private func buildSection() async {
-        let sortedPacks = sortPacks(packs)
+        let sortedPacks = packPresentableSorter.sortPacks(packs)
         var sections = [PacksSectionPresentable]()
         let inTransitPacks = sortedPacks.filter { $0.packState == .inTransit }
         let deliveryCompletedPacks = sortedPacks.filter { $0.packState == .deliveryCompleted }
@@ -80,15 +81,5 @@ final class PackListViewModel: ObservableObject {
         let archivedPackIds = interactor.getArchivedPackIds()
         let filteredPacks = packs.filter { !archivedPackIds.contains($0.id) }
         return filteredPacks
-    }
-
-    private func sortPacks(_ packs: [PackPresentable]) -> [PackPresentable] {
-        packs.sorted(by: {
-            $0.sortOrderNumber > $1.sortOrderNumber
-                || $0.pickupDate ?? .distantPast > $1.pickupDate ?? .distantPast
-                || $0.expiryDate ?? .distantPast < $1.expiryDate ?? .distantPast
-                || $0.storedDate ?? .distantPast > $1.storedDate ?? .distantPast
-                || $0.id < $1.id
-        })
     }
 }
